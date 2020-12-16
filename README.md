@@ -1,6 +1,6 @@
-# sika-design (sika-design)
+# sika-quasar-design (sika-quasar-design)
 
-demo
+[点此体验](http://quasar.sikacode.com/)
 
 ## Install the dependencies
 ```bash
