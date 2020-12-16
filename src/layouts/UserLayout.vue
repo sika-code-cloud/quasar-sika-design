@@ -3,7 +3,7 @@
     <q-layout view="hHh LpR fff" style="font-family: 微软雅黑">
       <q-header class="bg-white text-primary shadow-1">
         <q-toolbar>
-          <q-toolbar-title> Sika Code Design </q-toolbar-title>
+          <q-toolbar-title> Sika Code Design</q-toolbar-title>
           <div>Sika v1.0.0</div>
         </q-toolbar>
       </q-header>
@@ -11,10 +11,13 @@
         <div class="q-mb-lg">
           <div class="text-center q-mb-sm">
             <span class="inline-block">Sika Design Pro</span>
-            <q-icon name="ti-github  q-mx-md"></q-icon>
+            <q-btn type="a" target="_blank" unelevated size="12px" dense
+                   href="https://github.com/dq-open-cloud/quasar-sika-design">
+              <q-icon name="ti-github q-mx-md" />
+            </q-btn>
             <span class="inline-block">Sika Design</span>
           </div>
-          <div class="text-center">Copyright@2019 Sika 体验技术部出品</div>
+          <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
         </div>
       </q-footer>
       <q-page-container>
@@ -49,8 +52,10 @@ export default {
     }
   },
   methods: {
-    topMargin() {}
+    topMargin() {
+    }
   },
-  mounted: function () {}
+  mounted: function() {
+  }
 }
 </script>

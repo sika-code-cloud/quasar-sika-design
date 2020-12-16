@@ -366,7 +366,10 @@
       <div class="q-my-lg">
         <div class="text-center q-mb-sm">
           <span class="inline-block">Sika Design Pro</span>
-          <q-icon name="ti-github q-mx-md"></q-icon>
+          <q-btn type="a" target="_blank" unelevated size="12px" dense
+                 href="https://github.com/dq-open-cloud/quasar-sika-design">
+            <q-icon name="ti-github q-mx-md" />
+          </q-btn>
           <span class="inline-block">Sika Design</span>
         </div>
         <div class="text-center">Copyright@2019 Sika 体验技术部出品</div>
