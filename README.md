@@ -24,7 +24,29 @@ Overview
 
 基于 [Quasar](http://www.quasarchs.com/quasar-cli/installation/#Introduction) 实现的 [Quasar Sika Design](http://quasar.sikacode.com/) 
 
-![dashboard](https://static-2.loacg.com/open/static/github/SP1.png)
+PC端示例
+----
+
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E7%9B%91%E6%8E%A7%E9%A1%B5.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E9%AB%98%E7%BA%A7%E8%AF%A6%E6%83%85%E9%A1%B5.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E4%B8%AA%E4%BA%BA%E8%AE%BE%E7%BD%AE.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E5%88%86%E6%AD%A5%E8%A1%A8%E5%8D%95.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E5%9F%BA%E7%A1%80%E8%A1%A8%E5%8D%95.png)
+***
+![dashboard](https://github.com/dq-open-cloud/quasar-sika-design/blob/main/github/imgs/pc/%E6%9F%A5%E8%AF%A2%E8%A1%A8%E6%A0%BC.png)
+
+mobile端示例
+----
+
+
 
 环境和依赖
 ----
