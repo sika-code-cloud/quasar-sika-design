@@ -27,48 +27,48 @@ Overview
 PC端示例
 ----
 
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_analysis.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_monitor.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_workplace.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/account_center.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/account_settings.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/form_advanced-form.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/list_goodsList.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/profile_advanced.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/right_lan.png)
+<img scr="public/demo/pc/dashboard_analysis.png"/>
+
+<img scr="public/demo/pc/dashboard_monitor.png"/>
+
+<img scr="public/demo/pc/dashboard_workplace.png"/>
+
+<img scr="public/demo/pc/account_center.png"/>
+
+<img scr="public/demo/pc/account_settings.png"/>
+
+<img scr="public/demo/pc/form_advanced-form.png"/>
+
+<img scr="public/demo/pc/list_goodsList.png"/>
+
+<img scr="public/demo/pc/profile_advanced.png"/>
+
+<img scr="public/demo/pc/right_lan.png"/>
 
 mobile端示例
 ----
 
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis1.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis2.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_monitor.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_workplace.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/account_center.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/account_settings.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/list_goods-list.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/profile_advanced.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/user_login.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/user_register.png)
+<img scr="public/demo/mobile/dashboard_analysis.png"/>
+
+<img scr="public/demo/mobile/dashboard_analysis1.png"/>
+
+<img scr="public/demo/mobile/dashboard_analysis2.png"/>
+
+<img scr="public/demo/mobile/dashboard_monitor.png"/>
+
+<img scr="public/demo/mobile/dashboard_workplace.png"/>
+
+<img scr="public/demo/mobile/account_center.png"/>
+
+<img scr="public/demo/mobile/account_settings.png"/>
+
+<img scr="public/demo/mobile/list_goods-list.png"/>
+
+<img scr="public/demo/mobile/profile_advanced.png"/>
+
+<img scr="public/demo/mobile/user_login.png"/>
+
+<img scr="public/demo/mobile/user_register.png"/>
 
 环境和依赖
 ----
