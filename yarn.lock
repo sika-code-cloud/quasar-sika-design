@@ -1046,10 +1046,10 @@
     core-js "^3.6.5"
     core-js-compat "^3.6.5"
 
-"@quasar/cli@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/@quasar/cli/download/@quasar/cli-1.1.2.tgz#133042273b8edc38bb981468d839f74a08e44112"
-  integrity sha1-EzBCJzuO3Di7mBRo2Dn3SgjkQRI=
+"@quasar/cli@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.npm.taobao.org/@quasar/cli/download/@quasar/cli-1.1.3.tgz#db84d0aa6982fd2e924021e4191987229d4f3b45"
+  integrity sha1-24TQqmmC/S6SQCHkGRmHIp1PO0U=
   dependencies:
     async "3.2.0"
     chalk "4.1.0"
