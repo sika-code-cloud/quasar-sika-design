@@ -13,6 +13,8 @@ An out-of-box UI solution for enterprise applications as a Vue boilerplate. base
 </div>
 
 - 预览: http://quasar.sikacode.com/
+- <a href="https://github.com/dq-open-cloud/quasar-sika-design" target="_blank"> Github </a>
+- <a href="https://gitee.com/sikadai/quasar-sika-design" target="_blank"> Gitee </a>
 - 首页: 待完善
 - 文档: 待完善
 - 更新日志: 待完善
