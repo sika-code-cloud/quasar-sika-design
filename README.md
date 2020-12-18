@@ -62,13 +62,9 @@ mobile端示例
 ***
 ![dashboard](http://quasar.sikacode.com/demo/mobile/account_settings.png)
 ***
-![dashboard](http://quasar.sikacode.com/demo/mobile/form_step-form.png)
-***
 ![dashboard](http://quasar.sikacode.com/demo/mobile/list_goods-list.png)
 ***
 ![dashboard](http://quasar.sikacode.com/demo/mobile/profile_advanced.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/right_lan.png)
 ***
 ![dashboard](http://quasar.sikacode.com/demo/mobile/user_login.png)
 ***
