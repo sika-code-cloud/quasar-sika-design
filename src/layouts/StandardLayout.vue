@@ -58,7 +58,7 @@
               title-color="white"
               floating
               v-if="totalInformCount > 0"
-              >{{ totalInformCount }}
+            >{{ totalInformCount }}
             </q-badge>
           </q-btn>
           <span class="inline-block">
@@ -74,7 +74,7 @@
                   text-overflow: ellipsis;
                   overflow: hidden;
                 "
-                >Emailseeeeee</span
+              >Emailseeeeee</span
               >
               <q-menu
                 :offset="[0, 26]"
@@ -962,11 +962,11 @@ export default {
     }
   },
   watch: {
-    gtSm: function () {
+    gtSm: function() {
       this.rightHide()
     },
     $route: {
-      handler: function (val, oldVal) {
+      handler: function(val, oldVal) {
         this.buildTabRoute()
       },
       // 深度观察监听
@@ -974,7 +974,7 @@ export default {
     }
   },
   computed: {
-    view: function () {
+    view: function() {
       return (
         this.styleSettingsData.fixed.viewHead +
         ' ' +
@@ -983,26 +983,26 @@ export default {
         this.styleSettingsData.fixed.viewFoot
       )
     },
-    menuContentClass: function () {
+    menuContentClass: function() {
       if (this.$q.screen.lt.sm) {
         return 'q-mx-xs'
       }
       return ''
     },
-    informCount: function () {
+    informCount: function() {
       return LAYOUT_DATA.getAvailableCount(this.informs)
     },
-    notifiesCount: function () {
+    notifiesCount: function() {
       return LAYOUT_DATA.getAvailableCount(this.notifies)
     },
-    waitDealCount: function () {
+    waitDealCount: function() {
       return LAYOUT_DATA.getAvailableCount(this.waitDeals)
     },
-    totalInformCount: function () {
+    totalInformCount: function() {
       return this.informCount + this.notifiesCount + this.waitDealCount
     }
   },
-  mounted: function () {
+  mounted: function() {
     this.buildTabRoute()
   }
 }
