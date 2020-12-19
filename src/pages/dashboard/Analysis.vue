@@ -275,7 +275,7 @@
                   unelevated
                   toggle-color="primary"
                   :options="[
-                    { label: '今日', value: 'currentDay' },
+                    { label: '当周', value: 'currentWeek' },
                     { label: '当月', value: 'currentMonth' },
                     { label: '当年', value: 'currentYear' }
                   ]"
@@ -294,12 +294,9 @@
                 :class="{ 'q-pr-md': $q.screen.gt.sm }"
               >
                 <q-item-label class="text-weight-bold">访问量趋势</q-item-label>
-                <q-banner class="bg-red-2 q-mt-sm" style="height: 248px">
-                  <ebar :height="eBarData.height" :option="eBarData.option"/>
-                  <template v-slot:action>
-                    <q-btn flat label="Turn ON Wifi" />
-                  </template>
-                </q-banner>
+                <div class="q-mt-sm">
+                  <ebar :height="eBarData.height" :option="eBarData.option" />
+                </div>
               </q-item-label>
               <q-item-label class="col-md-4 col-xs-12">
                 <q-item-label class="text-weight-bold q-mb-sm"
@@ -441,12 +438,16 @@ import ScDateRange from 'components/common/ScDateRange'
 
 export default {
   name: 'Analysis',
-  components: { ScDateRange, ScShadow, ebar },
+  components: {
+    ScDateRange,
+    ScShadow,
+    ebar
+  },
   data() {
     return {
       analysisData: ANALYSIS_DATA,
       eBarData: ANALYSIS_DATA.eBarData,
-      visitQuery: 'currentDay'
+      visitQuery: 'currentWeek'
     }
   },
   methods: {
@@ -460,22 +461,20 @@ export default {
       }
     },
     changeQueryDate(value) {
-      const currentDate = new Date()
+      if (!value) {
+        value = 'currentWeek'
+      }
+      const currentDate = date.startOfDate(new Date(), 'day')
       let lastDate = new Date()
       if (value === 'currentMonth') {
         lastDate = date.subtractFromDate(currentDate, { days: 30 })
       } else if (value === 'currentYear') {
         lastDate = date.subtractFromDate(currentDate, { days: 365 })
+      } else {
+        lastDate = date.subtractFromDate(currentDate, { days: 7 })
       }
+      ANALYSIS_DATA.buildEbarItems(lastDate, currentDate, value, this.eBarData)
       this.$refs.startEndDate.buildStartAndEndDate(lastDate, currentDate)
-    },
-    buildViewItemsForEbar(res, format, titleText) {
-      const items = res.result.items
-      const optionData = ANALYSIS_DATA.buildViewItems(items, format)
-      const eBarData = this.eBarData
-      eBarData.option.xAxis.data = optionData.xAxisData
-      eBarData.option.series.data = optionData.seriesData
-      eBarData.option.title.text = titleText
     }
   },
   computed: {
@@ -488,6 +487,9 @@ export default {
       }
       return '1em'
     }
+  },
+  mounted() {
+    this.changeQueryDate()
   }
 }
 </script>

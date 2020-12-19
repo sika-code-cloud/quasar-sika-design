@@ -1,6 +1,7 @@
 import numeral from 'numeral'
 import { date } from 'quasar'
 import _ from 'lodash'
+import commonUtil from 'src/utils/commonUtil'
 
 const visitData = {
   icon: 'visibility',
@@ -206,10 +207,8 @@ const eLineData = {
 }
 
 const eBarData = {
+  height: 260,
   option: {
-    title: {
-      text: '当天访问量'
-    },
     xAxis: {
       data: []
     },
@@ -222,6 +221,12 @@ const eBarData = {
       data: []
     }
   }
+}
+
+function buildViewItemsForEbar(items, format, eBarData) {
+  const optionData = buildViewItems(items, format)
+  eBarData.option.xAxis.data = optionData.xAxisData
+  eBarData.option.series.data = optionData.seriesData
 }
 
 function buildViewItems(items, format) {
@@ -240,6 +245,32 @@ function buildViewItems(items, format) {
   return option
 }
 
+function buildEbarItems(startDate, endDate, barType, eBarData) {
+  let format = 'YYYY/MM/DD'
+  let unit = 'days'
+  if (barType === 'currentYear') {
+    format = 'YYYY/MM'
+    unit = 'months'
+  }
+  let dateDiff = date.getDateDiff(startDate, endDate, unit)
+  if (dateDiff < 0) {
+    dateDiff = -dateDiff
+  }
+  const barItemDatas = []
+  for (let i = 0; i < dateDiff; ++i) {
+    let dateTemp = date.addToDate(startDate, { days: i })
+    if (barType === 'currentYear') {
+      dateTemp = date.addToDate(startDate, { month: i })
+    }
+    const data = {
+      date: dateTemp,
+      number: commonUtil.getRandomFloorInt(1000)
+    }
+    barItemDatas.push(data)
+  }
+  buildViewItemsForEbar(barItemDatas, format, eBarData)
+}
+
 export default {
   visitData,
   saleData,
@@ -250,5 +281,7 @@ export default {
   hotSearchData,
   eLineData,
   eBarData,
-  buildViewItems
+  buildEbarItems,
+  buildViewItems,
+  buildViewItemsForEbar
 }

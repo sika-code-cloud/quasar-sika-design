@@ -2,7 +2,7 @@
   <div :id="chartId" :style="[{ 'width': '100%' }, { 'height': height + 'px' }]"></div>
 </template>
 <script>
-import { drawChart, watchOptionRefresh, defaultBarOption } from '@/components/ECharts/util/util'
+import echartsUtil from '@/utils/echartsUtil'
 
 export default {
   name: 'Ebar',
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      defaultOption: defaultBarOption,
+      defaultOption: echartsUtil.defaultBarOption,
       myChart: {}
     }
   },
@@ -40,14 +40,14 @@ export default {
   watch: {
     option: {
       handler(newVal, oldVal) {
-        watchOptionRefresh(this, newVal, oldVal)
+        echartsUtil.watchOptionRefresh(this, newVal, oldVal)
       },
       deep: true // 对象内部属性的监听，关键。
     }
   },
   created() {
     this.$nextTick(() => {
-      drawChart(this)
+      echartsUtil.drawChart(this)
     })
     window.addEventListener('resize', this.resize)
   },
