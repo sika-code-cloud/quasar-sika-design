@@ -1,4 +1,5 @@
 import numeral from 'numeral'
+import { date } from 'quasar'
 import _ from 'lodash'
 
 const visitData = {
@@ -181,6 +182,64 @@ const hotSearchData = {
   ]
 }
 
+const eLineData = {
+  height: 100,
+  option: {
+    xAxis: {
+      show: false,
+      data: []
+    },
+    yAxis: {
+      show: false
+    },
+    series: {
+      name: '访问来源',
+      data: []
+    },
+    grid: {
+      right: '1%',
+      top: '30%',
+      left: '-6%',
+      containLabel: true
+    }
+  }
+}
+
+const eBarData = {
+  option: {
+    title: {
+      text: '当天访问量'
+    },
+    xAxis: {
+      data: []
+    },
+    grid: {
+      top: '15%',
+      margin: '5%'
+    },
+    series: {
+      name: '访问来源',
+      data: []
+    }
+  }
+}
+
+function buildViewItems(items, format) {
+  const option = {
+    xAxisData: [],
+    seriesData: []
+  }
+  for (let i = 0; i < items.length; i++) {
+    const nameFormat = date.formatDate(items[i].date, format)
+    option.xAxisData.push(nameFormat)
+    option.seriesData.push({
+      name: nameFormat,
+      value: items[i].number
+    })
+  }
+  return option
+}
+
 export default {
   visitData,
   saleData,
@@ -188,5 +247,8 @@ export default {
   userData,
   linkData,
   visitRankData,
-  hotSearchData
+  hotSearchData,
+  eLineData,
+  eBarData,
+  buildViewItems
 }
