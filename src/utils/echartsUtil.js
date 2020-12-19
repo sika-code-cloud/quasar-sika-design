@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import echarts from 'echarts'
+import * as echarts from 'echarts'
 
 // --------------------------------- 默认值begin ------------------------------
 
@@ -224,11 +224,9 @@ const defaultPieOption = {
   }
 }
 
-export { defaultTooltip, defaultSeriesColor, defaultBarOption, defaultLineOption, defaultPieOption }
-
 // --------------------------------- 常量End ------------------------------
 
-export function changeMarkerSize(marker, backgroundColor, size = '8px') {
+function changeMarkerSize(marker, backgroundColor, size = '8px') {
   const PageDOM = document.createElement('div') // 创建一个容器
   PageDOM.innerHTML = marker
   const spanStyle = PageDOM.getElementsByTagName('span')[0].style
@@ -240,7 +238,7 @@ export function changeMarkerSize(marker, backgroundColor, size = '8px') {
   return PageDOM.innerHTML
 }
 
-export function defaultFormatter(param, backGroundColor) {
+function defaultFormatter(param, backGroundColor) {
   let firstParam = param
   if (param instanceof Array) {
     firstParam = param[0]
@@ -261,8 +259,8 @@ export function defaultFormatter(param, backGroundColor) {
 }
 
 // 监听Option的变化进行刷新
-export function watchOptionRefresh(self, newVal, oldVal) {
-  if (self.myChart) {
+function watchOptionRefresh(self, newVal, oldVal) {
+  if (self.myChart && self.myChart.setOption) {
     if (newVal) {
       self.myChart.setOption(newVal)
     } else {
@@ -274,7 +272,7 @@ export function watchOptionRefresh(self, newVal, oldVal) {
 }
 
 /** 模板方法画图 */
-export function drawChart(self) {
+function drawChart(self) {
   // 基于准备好的dom，初始化echarts实例
   const dom = document.getElementById(self.chartId)
   self.myChart = echarts.init(dom, self.theme)
@@ -283,7 +281,20 @@ export function drawChart(self) {
 }
 
 /** 合并option */
-export function mergerOption(defaultOption, clientOption) {
+function mergerOption(defaultOption, clientOption) {
   const defaultOptionClone = _.cloneDeep(defaultOption)
   return _.merge(defaultOptionClone, clientOption)
+}
+
+export default {
+  defaultTooltip,
+  defaultSeriesColor,
+  defaultBarOption,
+  defaultLineOption,
+  defaultPieOption,
+  changeMarkerSize,
+  defaultFormatter,
+  watchOptionRefresh,
+  drawChart,
+  mergerOption
 }
