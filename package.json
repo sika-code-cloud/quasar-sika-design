@@ -16,6 +16,7 @@
     "animate.css": "^4.1.1",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "echarts": "^5.0.0",
     "ionicons": "5.2.3",
     "lodash": "^4.17.20",
     "mavon-editor": "^2.9.0",

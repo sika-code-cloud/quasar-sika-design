@@ -1,5 +1,7 @@
 import numeral from 'numeral'
+import { date } from 'quasar'
 import _ from 'lodash'
+import commonUtil from 'src/utils/commonUtil'
 
 const visitData = {
   icon: 'visibility',
@@ -181,6 +183,180 @@ const hotSearchData = {
   ]
 }
 
+const orderLineData = {
+  height: 60,
+  option: {
+    xAxis: {
+      show: false,
+      data: []
+    },
+    yAxis: {
+      show: false
+    },
+    series: {
+      name: '订单数量',
+      data: []
+    },
+    grid: {
+      right: '1%',
+      top: '0%',
+      left: '-10%',
+      containLabel: true
+    }
+  }
+}
+const searchUserLineData = {
+  height: 70,
+  option: {
+    xAxis: {
+      show: false,
+      data: []
+    },
+    yAxis: {
+      show: false
+    },
+    series: {
+      name: '搜索用户数',
+      data: []
+    },
+    grid: {
+      right: '1%',
+      top: '0%',
+      left: '-10%',
+      containLabel: true
+    }
+  }
+}
+const perPersonSearchLineData = {
+  height: 70,
+  option: {
+    xAxis: {
+      show: false,
+      data: []
+    },
+    yAxis: {
+      show: false
+    },
+    series: {
+      name: '人均搜索次数',
+      data: []
+    },
+    grid: {
+      right: '1%',
+      top: '0%',
+      left: '-10%',
+      containLabel: true
+    }
+  }
+}
+
+const salePieData = {
+  height: 260,
+  option: {
+    legend: {
+      data: []
+    },
+    series: {
+      name: '爬虫访问统计',
+      data: []
+    }
+  }
+}
+const visitBarData = {
+  height: 260,
+  option: {
+    xAxis: {
+      data: []
+    },
+    grid: {
+      top: '5%',
+      margin: '2%'
+    },
+    series: {
+      name: '访问来源',
+      data: []
+    }
+  }
+}
+
+function buildViewItemsForEbar(items, format, eBarData) {
+  const optionData = buildViewItems(items, format)
+  eBarData.option.xAxis.data = optionData.xAxisData
+  eBarData.option.series.data = optionData.seriesData
+}
+
+function buildViewItems(items, format) {
+  const option = {
+    xAxisData: [],
+    seriesData: []
+  }
+  for (let i = 0; i < items.length; i++) {
+    const nameFormat = date.formatDate(items[i].date, format)
+    option.xAxisData.push(nameFormat)
+    option.seriesData.push({
+      name: nameFormat,
+      value: items[i].number
+    })
+  }
+  return option
+}
+
+function buildEbarItems(startDate, endDate, barType, eBarData) {
+  let format = 'YYYY-MM-DD'
+  let unit = 'days'
+  if (barType === 'currentYear') {
+    format = 'YYYY-MM'
+    unit = 'months'
+  }
+  let dateDiff = date.getDateDiff(startDate, endDate, unit)
+  if (dateDiff < 0) {
+    dateDiff = -dateDiff
+  }
+  const barItemDatas = []
+  for (let i = 0; i < dateDiff; ++i) {
+    let dateTemp = date.addToDate(startDate, { days: i })
+    if (barType === 'currentYear') {
+      dateTemp = date.addToDate(startDate, { month: i })
+    }
+    const data = {
+      date: dateTemp,
+      number: commonUtil.getRandomRangeInt(100, 1000)
+    }
+    barItemDatas.push(data)
+  }
+  buildViewItemsForEbar(barItemDatas, format, eBarData)
+}
+
+function buildElineItems(eLineData, min, max) {
+  const startDate = date.subtractFromDate(new Date(), { days: 7 })
+  const itemDatas = []
+  for (let i = 0; i < 7; ++i) {
+    const dateTemp = date.addToDate(startDate, { days: i })
+    const data = {
+      date: dateTemp,
+      number: commonUtil.getRandomRangeInt(min, max)
+    }
+    itemDatas.push(data)
+  }
+  const optionData = buildViewItems(itemDatas, 'YYYY-MM-DD')
+  eLineData.option.xAxis.data = optionData.xAxisData
+  eLineData.option.series.data = optionData.seriesData
+}
+
+const itemNams = ['家用电器', '食用酒水', '个护健康', '服饰箱包', '电子图书', '母婴产品', '医药保健', '礼品鲜花', '汽车用品', '其他']
+
+function buildEpieItems(epieData) {
+  const data = []
+  for (let i = 0; i < itemNams.length; ++i) {
+    data.push({
+      name: itemNams[i],
+      value: commonUtil.getRandomRangeInt(1000, 5000)
+    })
+  }
+  epieData.option.series.data = data
+  epieData.option.legend.data = itemNams
+}
+
 export default {
   visitData,
   saleData,
@@ -188,5 +364,15 @@ export default {
   userData,
   linkData,
   visitRankData,
-  hotSearchData
+  hotSearchData,
+  orderLineData,
+  searchUserLineData,
+  perPersonSearchLineData,
+  visitBarData,
+  salePieData,
+  buildEbarItems,
+  buildViewItems,
+  buildViewItemsForEbar,
+  buildElineItems,
+  buildEpieItems
 }
