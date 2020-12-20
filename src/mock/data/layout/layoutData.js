@@ -390,6 +390,7 @@ const scrollStyleData = {
 }
 
 const rightOffset = {
+  rightOffsetGithubInit: [5, 68],
   rightOffsetInit: [5, 168],
   rightOffsetShow: [280, 168]
 }

@@ -774,6 +774,16 @@
         <q-page-sticky
           position="top-right"
           style="z-index: 3000"
+          :offset="rightOffsetGithub"
+        >
+          <q-btn type="a" target="_blank" color="primary" style="width: 40px;height: 40px" unelevated dense round
+                    href="https://github.com/dq-open-cloud/quasar-sika-design">
+            <q-icon name="ti-github"  />
+          </q-btn>
+        </q-page-sticky>
+        <q-page-sticky
+          position="top-right"
+          style="z-index: 3000"
           :offset="rightOffset"
         >
           <q-btn
@@ -823,6 +833,7 @@ export default {
       rightDrawerOpen: false,
       rightDrawerSetting: false,
       rightOffset: LAYOUT_DATA.rightOffset.rightOffsetInit,
+      rightOffsetGithub: LAYOUT_DATA.rightOffset.rightOffsetGithubInit,
       rightSelect: '流式',
       search: '',
       gtSm: this.$q.screen.gt.sm,
