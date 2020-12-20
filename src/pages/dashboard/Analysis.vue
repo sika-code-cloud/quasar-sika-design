@@ -129,20 +129,13 @@
             <q-card flat square class="q-pa-md">
               <div style="height: 70px">
                 <q-item-label
-                  class="text-grey-9 q-mb-md"
+                  class="text-grey-9"
                   style="font-size: xx-large"
                 >
                   {{ analysisData.orderData.dayOrderCount }}
                 </q-item-label>
-                <q-item-label class="q-mb-md">
-                  <span class="q-mr-md">
-                    日同比 {{ analysisData.orderData.dayForCompare }}
-                    <q-icon size="xs" name="arrow_drop_up" color="red" />
-                  </span>
-                  <span
-                  >周同比 {{ analysisData.orderData.weekForCompare }}
-                    <q-icon size="xs" name="arrow_drop_down" color="info" />
-                  </span>
+                <q-item-label>
+                  <eline :option="orderLineData.option" :height="orderLineData.height" />
                 </q-item-label>
               </div>
               <q-separator spaced="15px" />
@@ -295,7 +288,7 @@
               >
                 <q-item-label class="text-weight-bold">访问量趋势</q-item-label>
                 <div class="q-mt-sm">
-                  <ebar :height="eBarData.height" :option="eBarData.option" />
+                  <ebar :height="visitBarData.height" :option="visitBarData.option" />
                 </div>
               </q-item-label>
               <q-item-label class="col-md-4 col-xs-12">
@@ -364,6 +357,22 @@
                 </span>
               </q-card-section>
               <q-separator />
+              <q-item-label class="row">
+                <div class="col-xl-6 col-md-12 col-sm-6 col-xs-12 q-px-sm" style="height: 120px">
+                  <div class="q-mt-md q-mb-sm q-pl-sm">
+                    <span class="block q-mb-sm">搜索用户数</span>
+                    <span class="block" style="font-size: x-large">23,378</span>
+                  </div>
+                  <eline :option="searchUserLineData.option" :height="searchUserLineData.height" />
+                </div>
+                <div class="col-xl-6 col-md-12 col-sm-6 col-xs-12 q-px-sm" style="height: 120px">
+                  <div class="q-mt-md q-mb-sm ">
+                    <span class="block q-mb-sm">人均搜索次数</span>
+                    <span class="block" style="font-size: x-large">10</span>
+                  </div>
+                  <eline :option="perPersonSearchLineData.option" :height="perPersonSearchLineData.height" />
+                </div>
+              </q-item-label>
               <q-table
                 :data="analysisData.hotSearchData.data"
                 :columns="analysisData.hotSearchData.columns"
@@ -372,6 +381,29 @@
             </q-card>
           </div>
           <div class="col-md-6 col-xs-12 q-px-sm">
+            <q-card flat class="no-border-radius q-pb-md">
+              <q-card-section>
+                <q-avatar
+                  color="blue-1"
+                  size="sm"
+                  text-color="primary"
+                  class="q-mr-sm"
+                  icon="point_of_sale"
+                ></q-avatar>
+                <span> 销售额 </span>
+                <span>
+                  <q-icon
+                    name="more_vert"
+                    color="grey-7"
+                    class="float-right"
+                  ></q-icon>
+                </span>
+              </q-card-section>
+              <q-separator />
+              <q-item-label class="q-mt-md">
+                <epie :option="salePieData.option" :height="salePieData.height"/>
+              </q-item-label>
+            </q-card>
             <q-card flat class="no-border-radius">
               <q-card-section>
                 <q-avatar
@@ -392,7 +424,7 @@
               </q-card-section>
               <q-separator />
               <q-item-label class="row text-center q-px-md q-pt-lg q-pb-sm">
-                <div class="col text-blue">
+                <div class="col text-primary">
                   <q-avatar icon="accessibility" color="blue-1"></q-avatar>
                   <q-item-label class="q-mt-sm">男性 65%</q-item-label>
                 </div>
@@ -418,7 +450,7 @@
               <q-item-label>
                 <q-img
                   :ratio="3 / 1"
-                  src="https://file.iviewui.com/admin-pro-dist/img/user-preference.11401619.png"
+                  src="imgs/user-img.png"
                 ></q-img>
               </q-item-label>
             </q-card>
@@ -433,6 +465,8 @@
 import ANALYSIS_DATA from '@/mock/data/dashboard/analysisData'
 import ScShadow from 'components/shadow/ScShadow'
 import ebar from 'components/echarts/Ebar'
+import eline from 'components/echarts/Eline'
+import epie from 'components/echarts/Epie'
 import { date } from 'quasar'
 import ScDateRange from 'components/common/ScDateRange'
 
@@ -441,12 +475,18 @@ export default {
   components: {
     ScDateRange,
     ScShadow,
-    ebar
+    ebar,
+    epie,
+    eline
   },
   data() {
     return {
       analysisData: ANALYSIS_DATA,
-      eBarData: ANALYSIS_DATA.eBarData,
+      visitBarData: ANALYSIS_DATA.visitBarData,
+      orderLineData: ANALYSIS_DATA.orderLineData,
+      searchUserLineData: ANALYSIS_DATA.searchUserLineData,
+      perPersonSearchLineData: ANALYSIS_DATA.perPersonSearchLineData,
+      salePieData: ANALYSIS_DATA.salePieData,
       visitQuery: 'currentWeek'
     }
   },
@@ -473,7 +513,7 @@ export default {
       } else {
         lastDate = date.subtractFromDate(currentDate, { days: 7 })
       }
-      ANALYSIS_DATA.buildEbarItems(lastDate, currentDate, value, this.eBarData)
+      ANALYSIS_DATA.buildEbarItems(lastDate, currentDate, value, this.visitBarData)
       this.$refs.startEndDate.buildStartAndEndDate(lastDate, currentDate)
     }
   },
@@ -490,6 +530,10 @@ export default {
   },
   mounted() {
     this.changeQueryDate()
+    ANALYSIS_DATA.buildElineItems(this.orderLineData, 100, 1000)
+    ANALYSIS_DATA.buildElineItems(this.searchUserLineData, 100, 2000)
+    ANALYSIS_DATA.buildElineItems(this.perPersonSearchLineData, 5, 20)
+    ANALYSIS_DATA.buildEpieItems(this.salePieData)
   }
 }
 </script>
