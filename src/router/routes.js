@@ -1,6 +1,7 @@
 const routes = [
   {
     path: '/dashboard/analysis',
+    name: '/dashboard/analysis',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -11,6 +12,7 @@ const routes = [
   },
   {
     path: '/dashboard/monitor',
+    name: '/dashboard/monitor',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -21,6 +23,7 @@ const routes = [
   },
   {
     path: '/dashboard/workplace',
+    name: '/dashboard/workplace',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -31,6 +34,7 @@ const routes = [
   },
   {
     path: '/form/basic-form',
+    name: '/form/basic-form',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -41,6 +45,7 @@ const routes = [
   },
   {
     path: '/form/advanced-form',
+    name: '/form/advanced-form',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -51,6 +56,7 @@ const routes = [
   },
   {
     path: '/form/step-form',
+    name: '/form/step-form',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -61,6 +67,7 @@ const routes = [
   },
   {
     path: '/profile/basic',
+    name: '/profile/basic',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -71,6 +78,7 @@ const routes = [
   },
   {
     path: '/profile/advanced',
+    name: '/profile/advanced',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -81,6 +89,7 @@ const routes = [
   },
   {
     path: '/account/center',
+    name: '/account/center',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -91,6 +100,7 @@ const routes = [
   },
   {
     path: '/account/settings',
+    name: '/account/settings',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -101,6 +111,7 @@ const routes = [
   },
   {
     path: '/result/success',
+    name: '/result/success',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -111,6 +122,7 @@ const routes = [
   },
   {
     path: '/result/fail',
+    name: '/result/fail',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -121,6 +133,7 @@ const routes = [
   },
   {
     path: '/exception/403',
+    name: '/exception/403',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -131,6 +144,7 @@ const routes = [
   },
   {
     path: '/exception/404',
+    name: '/exception/404',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -141,6 +155,7 @@ const routes = [
   },
   {
     path: '/exception/500',
+    name: '/exception/500',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -151,6 +166,7 @@ const routes = [
   },
   {
     path: '/list/search/projects',
+    name: '/list/search/projects',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -161,6 +177,7 @@ const routes = [
   },
   {
     path: '/list/search/applications',
+    name: '/list/search/applications',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -171,6 +188,7 @@ const routes = [
   },
   {
     path: '/list/search/articles',
+    name: '/list/search/articles',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -181,6 +199,7 @@ const routes = [
   },
   {
     path: '/list/user-list',
+    name: '/list/user-list',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -191,6 +210,7 @@ const routes = [
   },
   {
     path: '/list/goods-list',
+    name: '/list/goods-list',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -201,6 +221,7 @@ const routes = [
   },
   {
     path: '/list/card-list',
+    name: '/list/card-list',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -211,6 +232,7 @@ const routes = [
   },
   {
     path: '/list/basic-list',
+    name: '/list/basic-list',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -221,6 +243,7 @@ const routes = [
   },
   {
     path: '/list/table-list',
+    name: '/list/table-list',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -231,6 +254,7 @@ const routes = [
   },
   {
     path: '/user/login',
+    name: '/user/login',
     component: () => import('layouts/UserLayout.vue'),
     children: [
       {
@@ -241,6 +265,7 @@ const routes = [
   },
   {
     path: '/user/register',
+    name: '/user/register',
     component: () => import('layouts/UserLayout.vue'),
     children: [
       {
@@ -251,6 +276,7 @@ const routes = [
   },
   {
     path: '/user/register',
+    name: '/user/register',
     component: () => import('layouts/UserLayout.vue'),
     children: [
       {
@@ -261,7 +287,7 @@ const routes = [
   },
   {
     path: '/user/registerResult',
-    name: 'registerResult',
+    name: '/user/registerResult',
     props: true,
     component: () => import('layouts/UserLayout.vue'),
     children: [
@@ -273,6 +299,7 @@ const routes = [
   },
   {
     path: '/editor/customer',
+    name: '/editor/customer',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -283,6 +310,7 @@ const routes = [
   },
   {
     path: '/editor/markdown',
+    name: '/editor/markdown',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
@@ -293,6 +321,7 @@ const routes = [
   },
   {
     path: '/',
+    name: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
