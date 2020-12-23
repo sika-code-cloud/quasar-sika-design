@@ -8,14 +8,22 @@
         </q-toolbar>
       </q-header>
       <q-footer class="bg-white text-blue-grey-4">
-        <div class="q-mb-lg">
+        <div class="q-my-lg">
           <div class="text-center q-mb-sm">
-            <span class="inline-block">Sika Design Pro</span>
-            <q-btn type="a" target="_blank" unelevated size="12px" dense
-                   href="https://github.com/dq-open-cloud/quasar-sika-design">
-              <q-icon name="ti-github q-mx-md" />
+            <span class="inline-block q-mr-sm">Sika Design Pro</span>
+            <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                   href="http://www.quasarchs.com/">
+              <q-avatar size="sm">
+                <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+              </q-avatar>
             </q-btn>
-            <span class="inline-block">Sika Design</span>
+            <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                   href="https://github.com/dq-open-cloud/quasar-sika-design">
+              <q-avatar size="sm" text-color="primary">
+                <q-icon name="ti-github q-mx-md" />
+              </q-avatar>
+            </q-btn>
+            <span class="inline-block q-ml-sm">Sika Design</span>
           </div>
           <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
         </div>
