@@ -1,6 +1,6 @@
 <template>
   <q-layout :view="view" class="bg-grey-2" style="font-family: 微软雅黑">
-    <q-resize-observer :debounce="300" @resize="onResize" />
+    <q-resize-observer @resize="onResize" />
     <q-header
       class="bg-white title-grey-8 shadow-1 sc-design"
       height-hint="64"
@@ -864,7 +864,6 @@ export default {
     },
     removeTab(index) {
       this.tabs.splice(index, 1)
-      this.removeTabFlag = true
       let to = '/'
       if (this.tabs.length > 0) {
         to = this.tabs[this.tabs.length - 1].to

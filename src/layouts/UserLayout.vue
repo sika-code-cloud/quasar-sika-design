@@ -25,7 +25,7 @@
             </q-btn>
             <span class="inline-block q-ml-sm">Sika Design</span>
           </div>
-          <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
+          <div class="text-center">Copyright@2020 Sika {{ $t('user.layout.experienceDesc') }}</div>
         </div>
       </q-footer>
       <q-page-container>
@@ -39,7 +39,7 @@
                 <strong>Sika Design</strong>
               </h4>
               <p class="text-grey">
-                Sika Design 是深圳大湾区最具影响力的Web设计样例
+                Sika Design {{ $t('user.layout.dawanDesc') }}
               </p>
             </div>
             <router-view />
@@ -56,6 +56,7 @@ export default {
   props: {},
   data() {
     return {
+      lang: this.$q.lang.getLocale(),
       topMarginClass: 'q-mt-lg'
     }
   },
@@ -64,6 +65,13 @@ export default {
     }
   },
   mounted: function() {
+    console.log(this.$q.lang.getLocale())
+  },
+  watch: {
+    lang(lang) {
+      console.log(lang)
+      this.$i18n.locale = lang
+    }
   }
 }
 </script>

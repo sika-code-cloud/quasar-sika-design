@@ -11,8 +11,8 @@
           narrow-indicator
           class="text-black"
         >
-          <q-tab name="mails" label="用户密码登录" />
-          <q-tab name="alarms" label="手机号登录" />
+          <q-tab name="mails" no-caps :label="$t('user.login.userPasswordLogin')" />
+          <q-tab name="alarms" no-caps :label="$t('user.login.phoneLogin')" />
         </q-tabs>
         <div class="q-gutter-y-sm">
           <q-tab-panels v-model="tab" class="text-center">
@@ -26,7 +26,7 @@
                     v-model="name"
                     dense
                     debounce="500"
-                    label="用户名:admin"
+                    :label="userNameLabel"
                     lazy-rules
                     square
                     :rules="[
@@ -49,7 +49,7 @@
                     v-model="password"
                     dense
                     debounce="500"
-                    label="密码:sika"
+                    :label="passwordLabel"
                     lazy-rules
                     square
                     :rules="[(val) => (val && val.length > 0) || '请输入密码']"
@@ -79,7 +79,7 @@
                     v-model="name"
                     dense
                     debounce="500"
-                    label="手机号"
+                    :label="$t('user.login.phone')"
                     lazy-rules
                     square
                     :rules="[
@@ -100,7 +100,7 @@
                     v-model="password"
                     dense
                     debounce="500"
-                    label="验证码"
+                    :label="$t('user.login.verifyCode')"
                     lazy-rules
                     square
                     :rules="[(val) => (val && val.length > 0) || '请输入密码']"
@@ -113,7 +113,7 @@
                         unelevated
                         color="secondary"
                         class="no-border-radius"
-                        label="获取验证码"
+                        :label="$t('user.login.getCode')"
                       />
                     </template>
                   </q-input>
@@ -124,18 +124,19 @@
           <div class="q-mx-md">
             <div class="row">
               <div class="col text-left">
-                <q-checkbox v-model="autoLogin" label="自动登录" />
+                <q-checkbox v-model="autoLogin" :label="$t('user.login.autoLogin')" />
               </div>
               <div class="col text-right">
-                <q-btn color="primary" flat label="忘记密码" />
+                <q-btn no-caps color="primary" flat :label="$t('user.login.forgotPassword')" />
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <q-btn
+                  no-caps
                   dense
                   unelevated
-                  label="登 录"
+                  :label="$t('user.login.login')"
                   size="17px"
                   color="primary q-mt-sm"
                   class="full-width no-border-radius"
@@ -144,14 +145,14 @@
                 >
                   <template v-slot:loading>
                     <q-spinner-ios class="on-left" />
-                    登录...
+                    {{ $t('user.login.login') }} ...
                   </template>
                 </q-btn>
               </div>
             </div>
             <div class="row q-pt-md">
               <div class="col-auto text-left q-pt-sm">
-                <span>其他登录方式</span>
+                <span>{{ $t('user.login.otherLoginType') }}</span>
                 <q-icon
                   v-for="(val, key) in loginIcon"
                   v-bind:key="key"
@@ -169,7 +170,8 @@
                   to="/user/register"
                   color="primary"
                   flat
-                  label="注册用户"
+                  no-caps
+                  :label="$t('user.login.register')"
                 />
               </div>
             </div>
@@ -207,7 +209,10 @@ export default {
     return {
       iconObject: {
         weixin: {
-          class: { iconName: 'iconweixin', color: 'text-grey' },
+          class: {
+            iconName: 'iconweixin',
+            color: 'text-grey'
+          },
           size: '22px'
         },
         zhifubao: {
@@ -218,15 +223,24 @@ export default {
           size: '20px'
         },
         taobao: {
-          class: { iconName: 'icontaobao', color: 'text-grey' },
+          class: {
+            iconName: 'icontaobao',
+            color: 'text-grey'
+          },
           size: '22px'
         },
         weibo: {
-          class: { iconName: 'iconweibo', color: 'text-grey' },
+          class: {
+            iconName: 'iconweibo',
+            color: 'text-grey'
+          },
           size: '20px'
         },
         github: {
-          class: { iconName: 'iconhuaban88', color: 'text-grey' },
+          class: {
+            iconName: 'iconhuaban88',
+            color: 'text-grey'
+          },
           size: '23px',
           type: 'link'
         }
@@ -234,6 +248,8 @@ export default {
       iconActive: {
         weibo: 'grey'
       },
+      userNameLabel: this.$t('user.login.userName') + ':admin',
+      passwordLabel: this.$t('user.login.userName') + ':sika',
       tab: 'mails',
       name: null,
       password: null,
@@ -297,7 +313,7 @@ export default {
     }
   },
   computed: {
-    loginIcon: function () {
+    loginIcon: function() {
       return this.iconObject
     }
   }
@@ -307,8 +323,10 @@ export default {
 <style scoped>
 /*@import '~assets/icons/iconfont.sass';*/
 @import 'http://at.alicdn.com/t/font_2136554_1fgggi4y4wt.css';
+
 .q-tab-panel {
 }
+
 .flip-list-move {
   transition: transform 1s;
 }
