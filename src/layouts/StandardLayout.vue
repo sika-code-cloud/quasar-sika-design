@@ -1,6 +1,6 @@
 <template>
   <q-layout :view="view" class="bg-grey-2" style="font-family: 微软雅黑">
-    <q-resize-observer :debounce="300" @resize="onResize" />
+    <q-resize-observer @resize="onResize" />
     <q-header
       class="bg-white title-grey-8 shadow-1 sc-design"
       height-hint="64"
@@ -365,14 +365,22 @@
     >
       <div class="q-my-lg">
         <div class="text-center q-mb-sm">
-          <span class="inline-block">Sika Design Pro</span>
-          <q-btn type="a" target="_blank" unelevated size="12px" dense
-                 href="https://github.com/dq-open-cloud/quasar-sika-design">
-            <q-icon name="ti-github q-mx-md" />
+          <span class="inline-block q-mr-sm">Sika Design Pro</span>
+          <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                 href="http://www.quasarchs.com/">
+            <q-avatar size="sm">
+              <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+            </q-avatar>
           </q-btn>
-          <span class="inline-block">Sika Design</span>
+          <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                 href="https://github.com/dq-open-cloud/quasar-sika-design">
+            <q-avatar size="sm" text-color="primary">
+              <q-icon name="ti-github q-mx-md" />
+            </q-avatar>
+          </q-btn>
+          <span class="inline-block q-ml-sm">Sika Design</span>
         </div>
-        <div class="text-center">Copyright@2019 Sika 体验技术部出品</div>
+        <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
       </div>
     </q-footer>
     <q-drawer
@@ -777,8 +785,8 @@
           :offset="rightOffsetGithub"
         >
           <q-btn type="a" target="_blank" color="primary" style="width: 40px;height: 40px" unelevated dense round
-                    href="https://github.com/dq-open-cloud/quasar-sika-design">
-            <q-icon name="ti-github"  />
+                 href="https://github.com/dq-open-cloud/quasar-sika-design">
+            <q-icon name="ti-github" />
           </q-btn>
         </q-page-sticky>
         <q-page-sticky
@@ -856,7 +864,6 @@ export default {
     },
     removeTab(index) {
       this.tabs.splice(index, 1)
-      this.removeTabFlag = true
       let to = '/'
       if (this.tabs.length > 0) {
         to = this.tabs[this.tabs.length - 1].to
