@@ -12243,6 +12243,11 @@ toml@^2.3.2:
   resolved "https://registry.npm.taobao.org/toml/download/toml-2.3.6.tgz#25b0866483a9722474895559088b436fd11f861b"
   integrity sha1-JbCGZIOpciR0iVVZCItDb9Efhhs=
 
+topology-vue@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.npm.taobao.org/topology-vue/download/topology-vue-0.2.11.tgz#2c6f3ca3994381ec27775cea56c6d3f4781602eb"
+  integrity sha1-LG88o5lDgewnd1zqVsbT9HgWAus=
+
 trim-leading-lines@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/trim-leading-lines/download/trim-leading-lines-0.1.1.tgz#0e7cac3e83042dcf95a74ed36966f17744d5c169"
