@@ -34,7 +34,9 @@ export default {
   methods: {
     resize() {
       const _this = this
-      _this.myChart.resize()
+      if (_this.myChart.resize) {
+        _this.myChart.resize()
+      }
     }
   },
   watch: {
