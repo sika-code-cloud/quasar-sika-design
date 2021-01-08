@@ -1,5 +1,6 @@
 <template>
   <div class="sc-design q-mb-md">
+    <q-resize-observer :debounce="300" @resize="resize" />
     <div class="row q-px-sm">
       <div class="col-md-3 col-sm-6 col-xs-12 q-px-sm q-mb-md">
         <sc-shadow>
@@ -135,7 +136,7 @@
                   {{ analysisData.orderData.dayOrderCount }}
                 </q-item-label>
                 <q-item-label>
-                  <eline :option="orderLineData.option" :height="orderLineData.height" />
+                  <eline ref="orderLine" :option="orderLineData.option" :height="orderLineData.height" />
                 </q-item-label>
               </div>
               <q-separator spaced="15px" />
@@ -288,7 +289,7 @@
               >
                 <q-item-label class="text-weight-bold">访问量趋势</q-item-label>
                 <div class="q-mt-sm">
-                  <ebar :height="visitBarData.height" :option="visitBarData.option" />
+                  <ebar :height="visitBarData.height" :option="visitBarData.option" ref="visitBar" />
                 </div>
               </q-item-label>
               <q-item-label class="col-md-4 col-xs-12">
@@ -363,14 +364,14 @@
                     <span class="block q-mb-sm">搜索用户数</span>
                     <span class="block" style="font-size: x-large">23,378</span>
                   </div>
-                  <eline :option="searchUserLineData.option" :height="searchUserLineData.height" />
+                  <eline ref="searchUserLine" :option="searchUserLineData.option" :height="searchUserLineData.height" />
                 </div>
                 <div class="col-xl-6 col-md-12 col-sm-6 col-xs-12 q-px-sm" style="height: 120px">
                   <div class="q-mt-md q-mb-sm ">
                     <span class="block q-mb-sm">人均搜索次数</span>
                     <span class="block" style="font-size: x-large">10</span>
                   </div>
-                  <eline :option="perPersonSearchLineData.option" :height="perPersonSearchLineData.height" />
+                  <eline ref="perPersonSearchLine" :option="perPersonSearchLineData.option" :height="perPersonSearchLineData.height" />
                 </div>
               </q-item-label>
               <q-table
@@ -401,7 +402,7 @@
               </q-card-section>
               <q-separator />
               <q-item-label class="q-mt-md">
-                <epie :option="salePieData.option" :height="salePieData.height"/>
+                <epie ref="salePie" :option="salePieData.option" :height="salePieData.height" />
               </q-item-label>
             </q-card>
             <q-card flat class="no-border-radius">
@@ -491,6 +492,13 @@ export default {
     }
   },
   methods: {
+    resize() {
+      this.$refs.orderLine.resize()
+      this.$refs.visitBar.resize()
+      this.$refs.salePie.resize()
+      this.$refs.searchUserLine.resize()
+      this.$refs.perPersonSearchLine.resize()
+    },
     color(item) {
       if (item < 65) {
         return 'blue'

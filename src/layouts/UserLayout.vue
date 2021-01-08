@@ -8,16 +8,24 @@
         </q-toolbar>
       </q-header>
       <q-footer class="bg-white text-blue-grey-4">
-        <div class="q-mb-lg">
+        <div class="q-my-lg">
           <div class="text-center q-mb-sm">
-            <span class="inline-block">Sika Design Pro</span>
-            <q-btn type="a" target="_blank" unelevated size="12px" dense
-                   href="https://github.com/dq-open-cloud/quasar-sika-design">
-              <q-icon name="ti-github q-mx-md" />
+            <span class="inline-block q-mr-sm">Sika Design Pro</span>
+            <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                   href="http://www.quasarchs.com/">
+              <q-avatar size="sm">
+                <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+              </q-avatar>
             </q-btn>
-            <span class="inline-block">Sika Design</span>
+            <q-btn type="a" target="_blank" unelevated size="12px" dense round
+                   href="https://github.com/dq-open-cloud/quasar-sika-design">
+              <q-avatar size="sm" text-color="primary">
+                <q-icon name="ti-github q-mx-md" />
+              </q-avatar>
+            </q-btn>
+            <span class="inline-block q-ml-sm">Sika Design</span>
           </div>
-          <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
+          <div class="text-center">Copyright@2020 Sika {{ $t('user.layout.experienceDesc') }}</div>
         </div>
       </q-footer>
       <q-page-container>
@@ -31,7 +39,7 @@
                 <strong>Sika Design</strong>
               </h4>
               <p class="text-grey">
-                Sika Design 是深圳大湾区最具影响力的Web设计样例
+                Sika Design {{ $t('user.layout.dawanDesc') }}
               </p>
             </div>
             <router-view />
@@ -48,6 +56,7 @@ export default {
   props: {},
   data() {
     return {
+      lang: this.$q.lang.getLocale(),
       topMarginClass: 'q-mt-lg'
     }
   },
@@ -56,6 +65,13 @@ export default {
     }
   },
   mounted: function() {
+    console.log(this.$q.lang.getLocale())
+  },
+  watch: {
+    lang(lang) {
+      console.log(lang)
+      this.$i18n.locale = lang
+    }
   }
 }
 </script>

@@ -12243,6 +12243,11 @@ toml@^2.3.2:
   resolved "https://registry.npm.taobao.org/toml/download/toml-2.3.6.tgz#25b0866483a9722474895559088b436fd11f861b"
   integrity sha1-JbCGZIOpciR0iVVZCItDb9Efhhs=
 
+topology-vue@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.npm.taobao.org/topology-vue/download/topology-vue-0.2.11.tgz#2c6f3ca3994381ec27775cea56c6d3f4781602eb"
+  integrity sha1-LG88o5lDgewnd1zqVsbT9HgWAus=
+
 trim-leading-lines@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/trim-leading-lines/download/trim-leading-lines-0.1.1.tgz#0e7cac3e83042dcf95a74ed36966f17744d5c169"
@@ -12850,6 +12855,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
+
+vue-i18n@^8.22.2:
+  version "8.22.2"
+  resolved "https://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.22.2.tgz?cache=0&sync_timestamp=1608686506432&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.22.2.tgz#58299a5a050e67b4f799d96fee7dd8bd269e0907"
+  integrity sha1-WCmaWgUOZ7T3mdlv7n3YvSaeCQc=
 
 vue-loader@15.9.5:
   version "15.9.5"

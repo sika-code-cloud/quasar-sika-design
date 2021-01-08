@@ -3,7 +3,7 @@
     <div class="q-px-md">
       <q-form @submit="onSubmit" @reset="onReset">
         <div class="q-gutter-y-md">
-          <div class="text-left text-body1">注册</div>
+          <div class="text-left text-body1">{{ $t('user.register.register') }}</div>
           <div class="row">
             <div class="col-12 q-gutter-y-sm">
               <q-input
@@ -12,7 +12,7 @@
                 clear-icon="cancel"
                 v-model="email"
                 dense
-                label="邮箱"
+                :label="$t('user.register.email')"
                 maxlength="128"
                 type="email"
                 lazy-rules
@@ -30,7 +30,7 @@
                 :type="isPwd ? 'password' : 'text'"
                 v-model="password"
                 dense
-                label="密码"
+                :label="$t('user.register.password')"
                 maxlength="32"
                 lazy-rules
                 square
@@ -54,7 +54,7 @@
                 :type="isPwd ? 'password' : 'text'"
                 v-model="confirmPassword"
                 dense
-                label="确认密码"
+                :label="$t('user.register.confirmPassword')"
                 maxlength="32"
                 lazy-rules
                 square
@@ -82,7 +82,7 @@
                 maxlength="11"
                 type="tel"
                 dense
-                label="手机号"
+                :label="$t('user.register.phone')"
                 lazy-rules
                 square
                 :rules="[(val) => (val && val.length > 0) || '请输入手机号']"
@@ -125,7 +125,7 @@
                 maxlength="6"
                 v-model="validateCode"
                 dense
-                label="验证码"
+                :label="$t('user.register.verifyCode')"
                 lazy-rules
                 square
                 :rules="[(val) => (val && val.length > 0) || '请输入验证码']"
@@ -135,12 +135,13 @@
                 </template>
                 <template v-slot:after>
                   <q-btn
+                    no-caps
                     unelevated
                     class="no-border-radius"
                     :loading="validateCodeLoading"
                     @click="getVerifyCode"
                     color="secondary"
-                    label="获取验证码"
+                    :label="$t('user.register.getCode')"
                   >
                     <template v-slot:loading>
                       <q-icon name="alarm" class="on-left" />
@@ -157,12 +158,13 @@
                     type="submit"
                     :loading="loading"
                     color="primary full-width"
-                    label="注 册"
+                    no-caps
+                    :label="$t('user.register.register')"
                     size="md"
                   >
                     <template v-slot:loading>
                       <q-spinner-hourglass class="on-left" />
-                      注册...
+                      {{ $t('user.register.register') }}...
                     </template>
                   </q-btn>
                 </div>
@@ -170,8 +172,9 @@
                   <q-btn
                     to="/user/login"
                     color="primary"
+                    no-caps
                     flat
-                    label="使用已有账户登录"
+                    :label="$t('user.register.existingAccountLogin')"
                   />
                 </div>
               </div>
