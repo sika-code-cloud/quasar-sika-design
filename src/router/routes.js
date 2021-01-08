@@ -320,6 +320,17 @@ const routes = [
     ]
   },
   {
+    path: '/expend/flow-chart',
+    name: '/expend/flow-chart',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/expend/FlowChart')
+      }
+    ]
+  },
+  {
     path: '/',
     name: '/',
     component: () => import('layouts/MainLayout.vue'),

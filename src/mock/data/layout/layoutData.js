@@ -193,6 +193,19 @@ const routeDatas = [
         to: '/editor/markdown'
       }
     ]
+  },
+  {
+    name: '拓展项',
+    icon: 'text_fields',
+    group: '/expend',
+    groupName: 'first',
+    children: [
+      {
+        name: '流程图',
+        group: '/expend',
+        to: '/expend/flow-chart'
+      }
+    ]
   }
 ]
 
