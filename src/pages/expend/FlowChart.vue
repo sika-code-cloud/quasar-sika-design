@@ -17,7 +17,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '//at.alicdn.com/t/font_2030495_pwo1zu1ka1.css';
 @import '//at.alicdn.com/t/font_1331132_qhyav2o6mp.css';
 
