@@ -766,6 +766,12 @@
                   style="padding: 0 8px; min-height: 24px; border-radius: 4px"
                 >
                   <q-icon
+                    size="18px"
+                    name="refresh"
+                    class="q-mx-xs"
+                    @click="refresh"
+                  ></q-icon>
+                  <q-icon
                     v-if="tab.to !== '/dashboard/analysis'"
                     size="18px"
                     name="close"
@@ -777,7 +783,7 @@
           </q-toolbar>
         </q-page-sticky>
         <transition mode="out-in">
-          <router-view />
+          <router-view :key="activeDate"/>
         </transition>
         <q-page-sticky
           position="top-right"
@@ -847,7 +853,8 @@ export default {
       gtSm: this.$q.screen.gt.sm,
       tabs: LAYOUT_DATA.accessTabs,
       currentPath: null,
-      notif2: true
+      notif2: true,
+      activeDate: 1
     }
   },
   components: {
@@ -977,6 +984,9 @@ export default {
         .catch(() => {
           // 失败
         })
+    },
+    refresh() {
+      this.activeDate = new Date().getTime()
     }
   },
   watch: {
