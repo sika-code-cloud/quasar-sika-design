@@ -13,7 +13,15 @@ Vue.use(VueRouter)
  * async/await or return a Promise which resolves
  * with the Router instance.
  */
-
+// 解决路由跳转相同的地址报错
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function (location) {
+  try {
+    return originalPush.call(this, location).catch(err => err)
+  } catch (error) {
+    console.error(error)
+  }
+}
 export default function(/* { store, ssrContext } */) {
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
