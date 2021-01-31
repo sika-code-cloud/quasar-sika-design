@@ -8,7 +8,7 @@
 
 import topology from 'topology-vue'
 // 需要导入topology-vue.css
-import 'topology-vue/topology-vue.css'
+// import 'topology-vue/topology-vue.css'
 
 export default {
   name: 'FlowChart',
