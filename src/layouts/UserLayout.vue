@@ -19,8 +19,8 @@
             </q-btn>
             <q-btn type="a" target="_blank" unelevated size="12px" dense round
                    href="https://github.com/dq-open-cloud/quasar-sika-design">
-              <q-avatar size="sm" text-color="primary">
-                <q-icon name="ti-github q-mx-md" />
+              <q-avatar size="sm">
+                <q-icon class="iconfont iconhuaban88 text-primary" />
               </q-avatar>
             </q-btn>
             <span class="inline-block q-ml-sm">Sika Design</span>
@@ -75,3 +75,6 @@ export default {
   }
 }
 </script>
+<style>
+@import 'http://at.alicdn.com/t/font_2136554_95kmewdgocg.css';
+</style>
