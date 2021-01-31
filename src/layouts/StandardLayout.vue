@@ -816,9 +816,14 @@
           style="z-index: 3000"
           :offset="rightOffsetGithub"
         >
-          <q-btn type="a" target="_blank" color="primary" style="width: 40px;height: 40px" unelevated dense round
+          <q-btn type="a" target="_blank" unelevated dense round
                  href="https://github.com/dq-open-cloud/quasar-sika-design">
-            <q-icon name="ti-github" />
+            <q-avatar style="width: 40px; height: 40px">
+              <q-icon class="iconfont iconhuaban88 text-primary"/>
+              <q-tooltip>
+                Github 地址
+              </q-tooltip>
+            </q-avatar>
           </q-btn>
         </q-page-sticky>
         <q-page-sticky
