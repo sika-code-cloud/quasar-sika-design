@@ -34,7 +34,7 @@
             <div class="q-mb-xl">
               <h4 class="q-ma-sm">
                 <q-avatar class="q-mr-md">
-                  <img alt="Sika logo" src="~assets/sikacode-logo.png" />
+                  <img alt="Sika logo" src="imgs/logo/sika-logo.png" />
                 </q-avatar>
                 <strong>Sika Design</strong>
               </h4>
