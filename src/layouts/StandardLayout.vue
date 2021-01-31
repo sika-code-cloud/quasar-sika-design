@@ -54,7 +54,7 @@
                  href="https://github.com/dq-open-cloud/quasar-sika-design">
             <q-avatar size="sm" text-color="primary">
               <q-icon class="iconhuaban88 iconfont text-primary" />
-              <q-tooltip>
+              <q-tooltip v-if="$q.screen.gt.sm">
                 Github地址
               </q-tooltip>
             </q-avatar>
@@ -62,7 +62,7 @@
           <q-btn unelevated size="sm" dense round @click="copyQQ('327424532')">
             <q-avatar size="sm">
               <q-icon class="iconfont iconqq text-primary" />
-              <q-tooltip>
+              <q-tooltip v-if="$q.screen.gt.sm">
                 点击复制QQ群：327424532，交流反馈
               </q-tooltip>
             </q-avatar>
@@ -820,7 +820,7 @@
                  href="https://github.com/dq-open-cloud/quasar-sika-design">
             <q-avatar style="width: 40px; height: 40px">
               <q-icon class="iconfont iconhuaban88 text-primary"/>
-              <q-tooltip>
+              <q-tooltip v-if="$q.screen.gt.sm">
                 Github 地址
               </q-tooltip>
             </q-avatar>
