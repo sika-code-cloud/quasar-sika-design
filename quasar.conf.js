@@ -19,7 +19,7 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
-    boot: ['main.js'],
+    boot: ['main.js', 'i18n'],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ['app.sass'],
@@ -155,9 +155,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'blog-admin-vue',
-        short_name: 'blog-admin-vue',
-        description: 'blog-admin-vue',
+        name: 'quasar-sika-design',
+        short_name: 'quasar-sika-design',
+        description: 'quasar-sika-design',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -220,7 +220,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'blog-admin-vue'
+        appId: 'quasar-sika-design'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration

@@ -936,10 +936,10 @@
   resolved "https://registry.npm.taobao.org/@positron/stack-trace/download/@positron/stack-trace-1.0.0.tgz#14fcc712a530038ef9be1ce6952315a839f466a8"
   integrity sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
 
-"@quasar/app@^2.0.0":
-  version "2.1.9"
-  resolved "https://registry.npm.taobao.org/@quasar/app/download/@quasar/app-2.1.9.tgz#b93f70b559f95608c9bff5e1ca6f787edaf7a1bd"
-  integrity sha1-uT9wtVn5VgjJv/Xhym94ftr3ob0=
+"@quasar/app@^2.1.14":
+  version "2.1.14"
+  resolved "https://registry.npm.taobao.org/@quasar/app/download/@quasar/app-2.1.14.tgz#1922d6b81d6c38caaff5bd92d0985c395f659a73"
+  integrity sha1-GSLWuB1sOMqv9b2S0JhcOV9lmnM=
   dependencies:
     "@quasar/babel-preset-app" "2.0.1"
     "@quasar/fastclick" "1.1.4"
@@ -967,7 +967,6 @@
     express "4.17.1"
     fast-glob "3.2.4"
     file-loader "6.2.0"
-    flat "^5.0.2"
     fork-ts-checker-webpack-plugin "4.1.6"
     friendly-errors-webpack-plugin "1.7.0"
     fs-extra "9.0.1"
@@ -1080,10 +1079,10 @@
     user-home "2.0.0"
     validate-npm-package-name "3.0.0"
 
-"@quasar/extras@^1.9.7":
-  version "1.9.10"
-  resolved "https://registry.npm.taobao.org/@quasar/extras/download/@quasar/extras-1.9.10.tgz#e0d8f98a7234d8bd996a7afbdba9763d4e331788"
-  integrity sha1-4Nj5inI02L2Zanr726l2PU4zF4g=
+"@quasar/extras@^1.9.14":
+  version "1.9.14"
+  resolved "https://registry.npm.taobao.org/@quasar/extras/download/@quasar/extras-1.9.14.tgz#d9a14547b8d4e43c95a98b24058ff0cdffd92df4"
+  integrity sha1-2aFFR7jU5DyVqYskBY/wzf/ZLfQ=
 
 "@quasar/fastclick@1.1.4":
   version "1.1.4"
@@ -5713,11 +5712,6 @@ flat-cache@^2.0.1:
     rimraf "2.6.3"
     write "1.0.3"
 
-flat@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.npm.taobao.org/flat/download/flat-5.0.2.tgz?cache=0&sync_timestamp=1602723468701&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fflat%2Fdownload%2Fflat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
-  integrity sha1-jKb+MyBp/6nTJMMnGYxZglnOskE=
-
 flatted@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/flatted/download/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
@@ -10237,10 +10231,10 @@ qs@6.7.0:
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
-quasar@^1.0.0:
-  version "1.14.6"
-  resolved "https://registry.npm.taobao.org/quasar/download/quasar-1.14.6.tgz#e49045def78f359ce4cd7c89baaba3a2d8ddfeae"
-  integrity sha1-5JBF3vePNZzkzXyJuqujotjd/q4=
+quasar@^1.15.1:
+  version "1.15.1"
+  resolved "https://registry.npm.taobao.org/quasar/download/quasar-1.15.1.tgz#da6968f7c58d0b09daf9d85e0f4da1430ae5dda2"
+  integrity sha1-2mlo98WNCwna+dheD02hQwrl3aI=
 
 query-string@^4.1.0:
   version "4.3.4"
@@ -12243,6 +12237,11 @@ toml@^2.3.2:
   resolved "https://registry.npm.taobao.org/toml/download/toml-2.3.6.tgz#25b0866483a9722474895559088b436fd11f861b"
   integrity sha1-JbCGZIOpciR0iVVZCItDb9Efhhs=
 
+topology-vue@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.npm.taobao.org/topology-vue/download/topology-vue-0.2.11.tgz#2c6f3ca3994381ec27775cea56c6d3f4781602eb"
+  integrity sha1-LG88o5lDgewnd1zqVsbT9HgWAus=
+
 trim-leading-lines@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/trim-leading-lines/download/trim-leading-lines-0.1.1.tgz#0e7cac3e83042dcf95a74ed36966f17744d5c169"
@@ -12850,6 +12849,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
+
+vue-i18n@^8.22.2:
+  version "8.22.2"
+  resolved "https://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.22.2.tgz?cache=0&sync_timestamp=1608686506432&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.22.2.tgz#58299a5a050e67b4f799d96fee7dd8bd269e0907"
+  integrity sha1-WCmaWgUOZ7T3mdlv7n3YvSaeCQc=
 
 vue-loader@15.9.5:
   version "15.9.5"
