@@ -17,7 +17,9 @@
           color="grey-8"
         />
         <q-btn dense flat size="sm" class="q-mr-xs" v-show="$q.screen.gt.xs">
-          <q-img src="imgs/logo/sika-logo-1.png" style="width: 100px" />
+          <q-avatar size="sm">
+            <q-img src="imgs/logo/sika-logo.png"/>
+          </q-avatar>
         </q-btn>
         <q-space />
         <div class="q-gutter-xs" v-if="$q.screen.gt.sm">
@@ -89,8 +91,8 @@
           </q-btn>
           <span class="inline-block">
             <q-chip dense color="white" class="cursor-pointer q-ml-sm">
-              <q-avatar size="sm">
-                <q-img src="~assets/sikacode-logo.png" />
+               <q-avatar size="xs">
+                <q-img src="imgs/logo/sika-logo.png" />
               </q-avatar>
               <span
                 class="inline-block"
@@ -421,7 +423,7 @@
       >
         <div class="bg-transparent q-px-sm q-gutter-x-sm">
           <q-avatar class="q-mb-sm">
-            <q-img style="width: 40px" src="~assets/sika-head.png" />
+            <q-img style="width: 40px" src="imgs/logo/sika-logo.png" />
           </q-avatar>
           <div class="text-body1 inline-block text-primary">
             <strong>Sika Design Pro</strong>
