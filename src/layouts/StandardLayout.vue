@@ -17,30 +17,58 @@
           color="grey-8"
         />
         <q-btn dense flat size="sm" class="q-mr-xs" v-show="$q.screen.gt.xs">
-          <q-img src="imgs/logo/sika-logo-1.png" style="width: 100px" />
+          <q-avatar size="sm">
+            <q-img src="imgs/logo/sika-logo.png"/>
+          </q-avatar>
         </q-btn>
         <q-space />
-        <q-input
-          square
-          class="GNL__toolbar-input"
-          outlined
-          dense
-          v-model="search"
-          color="bg-grey-7"
-          placeholder="Search for topics, locations & sources"
-        >
-          <template v-slot:prepend>
-            <q-icon v-if="search === ''" name="search" />
-            <q-icon
-              v-else
-              name="clear"
-              class="cursor-pointer"
-              @click="search = ''"
-            />
-          </template>
-        </q-input>
-        <q-space />
+        <div class="q-gutter-xs" v-if="$q.screen.gt.sm">
+          <q-btn type="a" target="_blank" unelevated size="sm" dense round
+                 href="http://www.cc-admin.top">
+            <q-avatar size="sm">
+              <q-img alt="GreaterWMS" src="imgs/logo/cc-admin-logo.png" style="width: 32px" />
+              <q-tooltip>
+                CC-ADMIN 企业级快速开发平台
+              </q-tooltip>
+            </q-avatar>
+          </q-btn>
+          <q-btn type="a" target="_blank" unelevated size="sm" dense round
+                 href="https://www.56yhz.com">
+            <q-avatar size="sm">
+              <q-img alt="GreaterWMS" src="imgs/logo/greater-wms-logo.png" />
+              <q-tooltip>
+                GreaterWMS 供应链管理系统
+              </q-tooltip>
+            </q-avatar>
+          </q-btn>
+          <q-btn type="a" target="_blank" unelevated size="sm" dense round
+                 href="http://www.quasarchs.com/">
+            <q-avatar size="sm">
+              <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+              <q-tooltip>
+                Quasar 中文官方文档
+              </q-tooltip>
+            </q-avatar>
+          </q-btn>
+        </div>
         <div class="q-gutter-xs q-ml-sm row items-center no-wrap">
+          <q-btn type="a" target="_blank" unelevated size="sm" dense round
+                 href="https://github.com/dq-open-cloud/quasar-sika-design">
+            <q-avatar size="sm" text-color="primary">
+              <q-icon class="iconhuaban88 iconfont text-primary" />
+              <q-tooltip v-if="$q.screen.gt.sm">
+                Github地址
+              </q-tooltip>
+            </q-avatar>
+          </q-btn>
+          <q-btn unelevated size="sm" dense round @click="copyQQ('327424532')">
+            <q-avatar size="sm">
+              <q-icon class="iconfont iconqq text-primary" />
+              <q-tooltip v-if="$q.screen.gt.sm">
+                点击复制QQ群：327424532，交流反馈
+              </q-tooltip>
+            </q-avatar>
+          </q-btn>
           <q-btn round dense flat size="sm" color="grey-7" icon="help_outline">
             <q-tooltip>帮助文档</q-tooltip>
           </q-btn>
@@ -63,8 +91,8 @@
           </q-btn>
           <span class="inline-block">
             <q-chip dense color="white" class="cursor-pointer q-ml-sm">
-              <q-avatar size="sm">
-                <q-img src="~assets/sikacode-logo.png" />
+               <q-avatar size="xs">
+                <q-img src="imgs/logo/sika-logo.png" />
               </q-avatar>
               <span
                 class="inline-block"
@@ -374,8 +402,8 @@
           </q-btn>
           <q-btn type="a" target="_blank" unelevated size="12px" dense round
                  href="https://github.com/dq-open-cloud/quasar-sika-design">
-            <q-avatar size="sm" text-color="primary">
-              <q-icon name="ti-github q-mx-md" />
+            <q-avatar size="sm">
+              <q-icon class="iconfont iconhuaban88 text-primary" />
             </q-avatar>
           </q-btn>
           <span class="inline-block q-ml-sm">Sika Design</span>
@@ -395,7 +423,7 @@
       >
         <div class="bg-transparent q-px-sm q-gutter-x-sm">
           <q-avatar class="q-mb-sm">
-            <q-img style="width: 40px" src="~assets/sika-head.png" />
+            <q-img style="width: 40px" src="imgs/logo/sika-logo.png" />
           </q-avatar>
           <div class="text-body1 inline-block text-primary">
             <strong>Sika Design Pro</strong>
@@ -783,16 +811,21 @@
           </q-toolbar>
         </q-page-sticky>
         <transition mode="out-in">
-          <router-view :key="activeDate"/>
+          <router-view :key="activeDate" />
         </transition>
         <q-page-sticky
           position="top-right"
           style="z-index: 3000"
           :offset="rightOffsetGithub"
         >
-          <q-btn type="a" target="_blank" color="primary" style="width: 40px;height: 40px" unelevated dense round
+          <q-btn type="a" target="_blank" unelevated dense round
                  href="https://github.com/dq-open-cloud/quasar-sika-design">
-            <q-icon name="ti-github" />
+            <q-avatar style="width: 40px; height: 40px">
+              <q-icon class="iconfont iconhuaban88 text-primary"/>
+              <q-tooltip v-if="$q.screen.gt.sm">
+                Github 地址
+              </q-tooltip>
+            </q-avatar>
           </q-btn>
         </q-page-sticky>
         <q-page-sticky
@@ -970,6 +1003,21 @@ export default {
         tweenToOpacity: 0.4
       })
     },
+    copyQQ(qq) {
+      copyToClipboard(qq)
+        .then(() => {
+          this.$q.notify({
+            color: 'white',
+            textColor: 'positive',
+            icon: 'check_circle',
+            position: 'top',
+            message: '成功复制QQ群号：' + qq
+          })
+        })
+        .catch(() => {
+          // 失败
+        })
+    },
     copy() {
       copyToClipboard(JSON.stringify(this.styleSettingsData))
         .then(() => {
@@ -1035,6 +1083,9 @@ export default {
   }
 }
 </script>
+<style>
+@import 'http://at.alicdn.com/t/font_2136554_95kmewdgocg.css';
+</style>
 
 <style lang="sass">
 .leftMenuHeader

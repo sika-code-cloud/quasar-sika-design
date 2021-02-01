@@ -321,9 +321,6 @@ export default {
 </script>
 
 <style scoped>
-/*@import '~assets/icons/iconfont.sass';*/
-@import 'http://at.alicdn.com/t/font_2136554_1fgggi4y4wt.css';
-
 .q-tab-panel {
 }
 
