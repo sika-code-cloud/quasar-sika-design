@@ -15,8 +15,10 @@
     "@tinymce/tinymce-vue": "3.2.0",
     "animate.css": "^4.1.1",
     "axios": "^0.20.0",
+    "babel-polyfill": "^6.26.0",
     "core-js": "^3.6.5",
     "echarts": "^5.0.0",
+    "es6-promise": "^4.2.8",
     "ionicons": "5.2.3",
     "lodash": "^4.17.20",
     "mavon-editor": "^2.9.0",
@@ -50,6 +52,7 @@
     "prettier": "2.1.2"
   },
   "browserslist": [
+    "ie 8",
     "last 10 Chrome versions",
     "last 10 Firefox versions",
     "last 4 Edge versions",
