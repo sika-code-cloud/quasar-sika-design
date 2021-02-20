@@ -18,7 +18,7 @@
           :transition-show="transitionShow"
           :transition-hide="transitionHide"
         >
-          <q-date v-model="startAndEndDate" square mask="YYYY-MM-DD" range />
+          <q-date v-model="startAndEndDate" square mask="YYYY-MM-DD" range :locale="myLocale" :title="title" />
         </q-menu>
       </q-icon>
     </template>
@@ -103,6 +103,14 @@ export default {
   },
   data() {
     return {
+      myLocale: {
+        /* starting with Sunday */
+        days: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        daysShort: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+        monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+        firstDayOfWeek: 1
+      },
       visitQuery: 'currentDay',
       startAndEndDateForRet: {
         from: this.fromDate,
@@ -115,7 +123,20 @@ export default {
       startAndEndDateFormat: ''
     }
   },
+  computed: {
+    title() {
+      if (this.startAndEndDate && this.startAndEndDate.from && this.startAndEndDate.to) {
+        return this.formatTitle(this.startAndEndDate.to, this.startAndEndDate.from)
+      } else if (date.isValid(this.startAndEndDate)) {
+        return this.formatTitle(this.startAndEndDate, this.startAndEndDate)
+      }
+      return '0天'
+    }
+  },
   methods: {
+    formatTitle(to, from) {
+      return (date.getDateDiff(to, from, 'days') + 1) + '天'
+    },
     formatDate(dateFormat) {
       return date.formatDate(dateFormat, this.dateFormat)
     },
@@ -164,7 +185,6 @@ export default {
   watch: {
     startAndEndDate: {
       handler(newValue, oldValue) {
-        console.log(JSON.stringify(newValue))
         this.startAndEndDateForRet = newValue
         if (!newValue) {
           newValue = this.defaultValue()
