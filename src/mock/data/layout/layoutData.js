@@ -364,22 +364,22 @@ const waitDealDatas = [
 const languageDatas = [
   {
     nationalFlag:
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604953153845&di=75a450709d07f093810061e3e8ae0a45&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F7af40ad162d9f2d3faac68ffa9ec8a136327cc65.jpg',
+      'imgs/language/us.jpg',
     label: 'Us English'
   },
   {
     nationalFlag:
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604954286966&di=ac7db27213c991c1982adad09f02abbf&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbaike%2Fs%3D220%2Fsign%3Db6ae7334978fa0ec7bc7630f1696594a%2Fb7003af33a87e950e154426b16385343fbf2b472.jpg',
+      'imgs/language/en.jpg',
     label: 'En English'
   },
   {
     nationalFlag:
-      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3101918221,2000267634&fm=26&gp=0.jpg',
+      'imgs/language/jiantizhongwen.jpg',
     label: 'CN 简体中文'
   },
   {
     nationalFlag:
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604953546889&di=4299987e8e6144411da56b8885a4ff73&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190331%2F1efebed7b2d948c2b3bbc3855651c120.jpeg',
+      'imgs/language/fantizhongwen.jpg',
     label: 'HK 繁体中文'
   }
 ]
