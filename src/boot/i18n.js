@@ -14,6 +14,10 @@ const i18n = new VueI18n({
 
 export default ({ app }) => {
   // 在应用程序上设置i18n实例
+  if (i18n.locale !== 'zh-cn') {
+    i18n.locale = 'en-us'
+    i18n.fallbackLocale = 'en-us'
+  }
   app.i18n = i18n
 }
 
