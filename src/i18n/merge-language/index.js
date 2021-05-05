@@ -1,4 +1,5 @@
-import user from './user'
+import user from './user/index'
+import layouts from './layouts'
 
 // /**
 //  * @param {object} mergeObj 合并的语言对象，被拷贝
@@ -15,6 +16,9 @@ function getLanguageMessage(mergeObj, currLang, airObj = {}) {
         // 当前语言相应值---a:{lang1:'ena',lang2:'cna'} => a:ena
         const langVal = ele[currLang]
         airObj[key] = langVal
+      } else if (ele && ele.zhCn && !ele.enUs) {
+        // ele是对象，并且里面的中文有值，英文无值，--- 默认英文值为中文的key
+        airObj[key] = key
       } else {
         getLanguageMessage(ele, currLang, airObj[key] = {})
       }
@@ -29,7 +33,7 @@ function getLanguageMessage(mergeObj, currLang, airObj = {}) {
 }
 
 // 将所有需要导入的模块，分解在此
-const mergeObj = { ...user }
+const mergeObj = { ...user, ...layouts }
 // 语言包list
 const languageList = ['zhCn', 'enUs']
 // 初始化语言包message

@@ -28,7 +28,7 @@
             <q-avatar size="sm">
               <q-img alt="GreaterWMS" src="imgs/logo/cc-admin-logo.png" style="width: 32px" />
               <q-tooltip>
-                CC-ADMIN 企业级快速开发平台
+                {{$t('StandardLayout.enterpriseRapidDevelopmentPlatform')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -37,7 +37,7 @@
             <q-avatar size="sm">
               <q-img alt="GreaterWMS" src="imgs/logo/greater-wms-logo.png" />
               <q-tooltip>
-                GreaterWMS 供应链管理系统
+                {{$t('StandardLayout.greaterWmsSupplyChainManagementSystem')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -46,7 +46,7 @@
             <q-avatar size="sm">
               <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
               <q-tooltip>
-                Quasar 中文官方文档
+                {{$t('StandardLayout.quasarChineseOfficialDocumentation')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -57,7 +57,7 @@
             <q-avatar size="sm" text-color="primary">
               <q-icon class="iconhuaban88 iconfont text-primary" />
               <q-tooltip v-if="$q.screen.gt.sm">
-                Github地址
+                {{$t('StandardLayout.githubAddress')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -65,12 +65,12 @@
             <q-avatar size="sm">
               <q-icon class="iconfont iconqq text-primary" />
               <q-tooltip v-if="$q.screen.gt.sm">
-                点击复制QQ群：327424532，交流反馈
+                {{$t('StandardLayout.clickToCopyQqGroup_327424532AcFeedback')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
           <q-btn round dense flat size="sm" color="grey-7" icon="help_outline">
-            <q-tooltip>帮助文档</q-tooltip>
+            <q-tooltip>{{$t('StandardLayout.helpDocumentation')}}</q-tooltip>
           </q-btn>
           <q-btn
             round
@@ -102,7 +102,7 @@
                   text-overflow: ellipsis;
                   overflow: hidden;
                 "
-              >Emailseeeeee</span
+              >{{$t('StandardLayout.Emailseeeeee')}}</span
               >
               <q-menu
                 :offset="[0, 26]"
@@ -119,7 +119,7 @@
                     >
                       <q-icon name="person" size="xs" />
                     </q-item-section>
-                    <q-item-section>个人中心</q-item-section>
+                    <q-item-section>{{$t('StandardLayout.Emailseeeeee')}}</q-item-section>
                   </q-item>
                   <q-item clickable v-close-popup to="/account/settings">
                     <q-item-section
@@ -129,7 +129,7 @@
                     >
                       <q-icon name="settings" size="xs" />
                     </q-item-section>
-                    <q-item-section>个人设置</q-item-section>
+                    <q-item-section>{{$t('StandardLayout.personalCenter')}}</q-item-section>
                   </q-item>
                   <q-separator color="grey-4" />
                   <q-item clickable v-close-popup to="/user/login">
@@ -140,7 +140,7 @@
                     >
                       <q-icon name="logout" size="xs" />
                     </q-item-section>
-                    <q-item-section>退出登录</q-item-section>
+                    <q-item-section>{{$t('StandardLayout.signOut')}}</q-item-section>
                   </q-item>
                 </q-list>
               </q-menu>
@@ -193,21 +193,21 @@
                 >
                   <q-tab name="informs">
                     <span v-if="informCount > 0">
-                      通知({{ informCount }})
+                      {{$t('StandardLayout.notice')}}({{ informCount }})
                     </span>
-                    <span v-else>通知</span>
+                    <span v-else>{{$t('StandardLayout.notice')}}</span>
                   </q-tab>
                   <q-tab name="notifies">
                     <span v-if="notifiesCount > 0">
-                      消息({{ notifiesCount }})
+                      {{$t('StandardLayout.news')}}({{ notifiesCount }})
                     </span>
-                    <span v-else>消息</span>
+                    <span v-else>{{$t('StandardLayout.news')}}</span>
                   </q-tab>
                   <q-tab name="waitDeals">
                     <span v-if="waitDealCount > 0">
-                      待办({{ waitDealCount }})
+                      {{$t('StandardLayout.upcoming')}}({{ waitDealCount }})
                     </span>
-                    <span v-else>待办</span>
+                    <span v-else>{{$t('StandardLayout.upcoming')}}</span>
                   </q-tab>
                 </q-tabs>
                 <q-separator />
@@ -248,7 +248,7 @@
                       <q-item class="row q-pa-none text-center cursor-pointer">
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="清空通知"
+                            :label="$t('StandardLayout.emptyNotice')"
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
@@ -258,11 +258,11 @@
                         <q-separator vertical />
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="查看更多"
+                            :label="$t('StandardLayout.seeMore')"
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
-                            @click="lookMore('查看通知')"
+                            @click="lookMore($t('StandardLayout.viewNotice'))"
                           ></q-btn>
                         </q-item-section>
                       </q-item>
@@ -304,7 +304,7 @@
                       <q-item class="row q-pa-none text-center cursor-pointer">
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="清空通知"
+                            :label="$t('StandardLayout.emptyNotice')"
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
@@ -314,11 +314,11 @@
                         <q-separator vertical />
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="查看更多"
+                            :label="$t('StandardLayout.seeMore')"
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
-                            @click="lookMore('查看通知')"
+                             @click="lookMore($t('StandardLayout.viewNotice'))"
                           ></q-btn>
                         </q-item-section>
                       </q-item>
@@ -360,7 +360,7 @@
                       <q-item class="row q-pa-none text-center cursor-pointer">
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="清空通知"
+                            :label="$t('StandardLayout.emptyNotice')"
                             flat
                             :ripple="{ color: 'info' }"
                             @click="clearMessage('waitDeals')"
@@ -370,11 +370,11 @@
                         <q-separator vertical />
                         <q-item-section class="col q-pa-none q-ma-none">
                           <q-btn
-                            label="查看更多"
+                            :label="$t('StandardLayout.seeMore')"
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
-                            @click="lookMore('查看通知')"
+                             @click="lookMore($t('StandardLayout.viewNotice'))"
                           ></q-btn>
                         </q-item-section>
                       </q-item>
@@ -408,7 +408,7 @@
           </q-btn>
           <span class="inline-block q-ml-sm">Sika Design</span>
         </div>
-        <div class="text-center">Copyright@2020 Sika 体验技术部出品</div>
+        <div class="text-center">{{`Copyright@2020 Sika ${$t('StandardLayout.experienceTheTechnicalDepartment')}`}}</div>
       </div>
     </q-footer>
     <q-drawer
@@ -467,7 +467,7 @@
           <q-list padding>
             <q-item v-if="false">
               <q-item-section>
-                <q-item-label>整体风格设置</q-item-label>
+                <q-item-label>{{$t('StandardLayout.overallStyleSetting')}}</q-item-label>
                 <q-item-label>
                   <div class="q-mt-sm q-gutter-x-md row" style="height: 50px">
                     <div
@@ -521,7 +521,7 @@
             </q-item>
             <q-item>
               <q-item-section>
-                <q-item-label>主题色</q-item-label>
+                <q-item-label>{{$t('StandardLayout.themeColor')}}</q-item-label>
                 <q-item-label class="q-gutter-sm">
                   <span
                     style="width: 20px; height: 20px"
@@ -557,7 +557,7 @@
 
             <q-item v-if="false">
               <q-item-section>
-                <q-item-label>导航模式</q-item-label>
+                <q-item-label>{{$t('StandardLayout.navigationMode')}}</q-item-label>
                 <q-item-label caption>
                   <div class="q-mt-sm q-gutter-x-md" style="height: 50px">
                     <div
@@ -604,7 +604,7 @@
             </q-item>
             <q-item tag="div" class="q-mt-md">
               <q-item-section>
-                <q-item-label>内容区域宽度</q-item-label>
+                <q-item-label>{{$t('StandardLayout.contentAreaWidth')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-select
@@ -614,14 +614,14 @@
                   outlined
                   v-model="rightSelect"
                   options-dense
-                  :options="['流式']"
+                  :options="[$t('StandardLayout.flow'),'流式']"
                 >
                 </q-select>
               </q-item-section>
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>固定Header</q-item-label>
+                <q-item-label>{{$t('StandardLayout.fixedHeader')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -635,7 +635,7 @@
 
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>固定Footer</q-item-label>
+                <q-item-label>{{$t('StandardLayout.fixedFooter')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -650,12 +650,12 @@
             <q-separator spaced="12px" />
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>内容区域</q-item-label>
+                <q-item-label>{{$t('StandardLayout.contentArea')}}</q-item-label>
               </q-item-section>
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>页头</q-item-label>
+                <q-item-label>{{$t('StandardLayout.header')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -666,7 +666,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>顶栏菜单</q-item-label>
+                <q-item-label>{{$t('StandardLayout.topRapeMenu')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -677,7 +677,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>顶栏光滑</q-item-label>
+                <q-item-label>{{$t('StandardLayout.glossy')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -688,7 +688,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>页脚</q-item-label>
+                <q-item-label>{{$t('StandardLayout.footage')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -699,7 +699,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>菜单头</q-item-label>
+                <q-item-label>{{$t('StandardLayout.menuHead')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -709,11 +709,11 @@
               </q-item-section>
             </q-item>
             <q-separator spaced="“12px" />
-            <q-item-label header>其他设置</q-item-label>
+            <q-item-label header>{{$t('StandardLayout.otherSettings')}}</q-item-label>
 
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>色弱模式</q-item-label>
+                <q-item-label>{{$t('StandardLayout.viwindMode')}}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle color="primary" v-model="notif2" val="friend" />
@@ -733,13 +733,13 @@
                   <q-icon name="alarm" />
                 </div>
                 <div class="col-11">
-                  配置栏只在开发环境用于预览，生产环境不会展现，请拷贝后手动修改配置文件
+                  {{$t('StandardLayout.onlyUsedForPreview')}}
                 </div>
               </div>
             </q-item>
             <q-item tag="label">
               <q-btn
-                label="拷贝设置"
+                :label="$t('StandardLayout.copySetting')"
                 class="full-width"
                 outline
                 color="secondary"
