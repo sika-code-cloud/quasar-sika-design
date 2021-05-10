@@ -823,7 +823,7 @@
             <q-avatar style="width: 40px; height: 40px">
               <q-icon class="iconfont iconhuaban88 text-primary"/>
               <q-tooltip v-if="$q.screen.gt.sm">
-                Github 地址
+                {{$t('StandardLayout.githubAddress')}}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -881,7 +881,7 @@ export default {
       rightDrawerSetting: false,
       rightOffset: LAYOUT_DATA.rightOffset.rightOffsetInit,
       rightOffsetGithub: LAYOUT_DATA.rightOffset.rightOffsetGithubInit,
-      rightSelect: '流式',
+      rightSelect: this.$t('StandardLayout.flow'),
       search: '',
       gtSm: this.$q.screen.gt.sm,
       tabs: LAYOUT_DATA.accessTabs,
@@ -1011,7 +1011,7 @@ export default {
             textColor: 'positive',
             icon: 'check_circle',
             position: 'top',
-            message: '成功复制QQ群号：' + qq
+            message: `${this.$t('StandardLayout.successfulCopyQqGroupNumber')}：` + qq
           })
         })
         .catch(() => {
@@ -1026,7 +1026,7 @@ export default {
             textColor: 'positive',
             icon: 'check_circle',
             position: 'top-right',
-            message: '成功复制样式'
+            message: this.$t('StandardLayout.successfulCopyStyle')
           })
         })
         .catch(() => {

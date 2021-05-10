@@ -1,5 +1,6 @@
 import user from './user/index'
 import layouts from './layouts'
+import dashboard from './dashboard'
 
 // /**
 //  * @param {object} mergeObj 合并的语言对象，被拷贝
@@ -33,7 +34,7 @@ function getLanguageMessage(mergeObj, currLang, airObj = {}) {
 }
 
 // 将所有需要导入的模块，分解在此
-const mergeObj = { ...user, ...layouts }
+const mergeObj = { ...user, ...layouts, ...dashboard }
 // 语言包list
 const languageList = ['zhCn', 'enUs']
 // 初始化语言包message

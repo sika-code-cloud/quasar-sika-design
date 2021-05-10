@@ -131,6 +131,14 @@ export default {
     copySetting: {
       zhCn: '拷贝设置',
       enUs: 'copy setting'
+    },
+    successfulCopyQqGroupNumber: {
+      zhCn: '成功复制QQ群号',
+      enUs: 'successful copy qq group number'
+    },
+    successfulCopyStyle: {
+      zhCn: '成功复制样式',
+      enUs: 'successful copy style'
     }
   }
 }
