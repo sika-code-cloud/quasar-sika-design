@@ -26,52 +26,57 @@ An out-of-box UI solution for enterprise applications as a Vue boilerplate. base
 Overview
 ----
 
-基于 [Quasar](http://www.quasarchs.com/quasar-cli/installation/#Introduction) 实现的 [Quasar Sika Design](http://quasar.sikacode.com/) 
+基于 [Quasar](http://www.quasarchs.com/quasar-cli/installation/#Introduction) 实现的 [Quasar Sika Design](http://quasar.sikacode.com/)
+
 
 PC端示例
 ----
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_analysis.png)
+<div style="float:left;border:solid 1px #000;margin:2px;">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/dashboard_analysis.png" width="49%" height="160px">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/dashboard_workplace.png" width="49%" height="160px">
+</div>
+
 ***
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_monitor.png)
+
+<div style="float:left;border:solid 1px #000;margin:2px;">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/dashboard_monitor.png" width="32%" height="120px">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/dashboard_workplace.png" width="32%" height="120px">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/account_settings.png" width="32%" height="120px">
+</div>
+
 ***
-![dashboard](http://quasar.sikacode.com/demo/pc/dashboard_workplace.png)
+
+<div style="float:left;border:solid 1px #000;margin:2px;">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/account_settings.png" width="32%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/form_advanced-form.png" width="32%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/list_goodsList.png" width="32%">
+</div>
+
 ***
-![dashboard](http://quasar.sikacode.com/demo/pc/account_center.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/account_settings.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/form_advanced-form.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/list_goodsList.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/profile_advanced.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/pc/right_lan.png)
+
+<div style="float:left;border:solid 1px #000;margin:2px;">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/list_goodsList.png" width="32%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/profile_advanced.png" width="32%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/pc/right_lan.png" width="32%">
+</div>
 
 mobile端示例
 ----
+<div style="float:left;border:solid 1px #000;margin:2px;">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/center1.png" width="24%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/center2.png" width="24%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/monitor2.png" width="24%" >
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/center.png" width="24%"  >
+</div>
 
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis.png)
 ***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis1.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_analysis2.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_monitor.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/dashboard_workplace.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/account_center.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/account_settings.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/list_goods-list.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/profile_advanced.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/user_login.png)
-***
-![dashboard](http://quasar.sikacode.com/demo/mobile/user_register.png)
+
+<div style="border:solid 1px #000;margin:2px; text-align: center">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/dashboard_workplace1.png" width="24%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/account_settings.png" width="24%" >
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/account_settings.png" width="24%">
+    <img src="https://gitee.com/sikadai/sika-material/raw/master/quasar-sika-design/case/imgs/mobile/list_goods-list.png" width="24%">
+</div>
 
 环境和依赖
 ----
@@ -120,7 +125,7 @@ yarn run lint
 其他说明
 ----
 
-- **关于 Issue 反馈 (重要!重要!重要!) 请在开 *Issue* 前，先阅读该内容：[Issue / PR 编写建议](https://github.com/vueComponent/ant-design-vue-pro/issues/90)** 
+- **关于 Issue 反馈 (重要!重要!重要!) 请在开 *Issue* 前，先阅读该内容：[Issue / PR 编写建议](https://github.com/vueComponent/ant-design-vue-pro/issues/90)**
 
 - 项目使用的 [quasar-cli](http://www.quasarchs.com/quasar-cli/installation/#Introduction), 请确保你所使用的 quasar-cli 是新版，并且已经学习 cli 官方文档使用教程
 
@@ -147,7 +152,7 @@ yarn run lint
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. 
+This project exists thanks to all the people who contribute.
 <a href="https://github.com/vueComponent/ant-design-vue-pro/graphs/contributors"><img src="https://opencollective.com/ant-design-pro-vue/contributors.svg?width=890&button=false" /></a>
 
 ### Customize the configuration

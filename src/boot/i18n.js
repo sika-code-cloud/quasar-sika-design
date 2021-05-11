@@ -5,7 +5,7 @@ import messages from 'src/i18n'
 import Quasar from 'quasar'
 
 Vue.use(VueI18n)
-
+console.log(Quasar.lang.getLocale())
 const i18n = new VueI18n({
   locale: Quasar.lang.getLocale(),
   fallbackLocale: Quasar.lang.getLocale(),

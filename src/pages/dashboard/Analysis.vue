@@ -13,7 +13,7 @@
                 class="q-mr-sm"
                 :icon="analysisData.visitData.icon"
               ></q-avatar>
-              <span> 访问量 </span>
+              <span>{{` ${$t('Analysis.views')} `}}</span>
               <span>
                 <q-chip
                   size="sm"
@@ -21,7 +21,7 @@
                   outline
                   color="green"
                   class="bg-green-1 float-right"
-                  label="日"
+                  :label="$t('Analysis.day')"
                 ></q-chip>
               </span>
             </q-card-section>
@@ -36,18 +36,18 @@
                 </q-item-label>
                 <q-item-label class="q-mb-md">
                   <span class="q-mr-md">
-                    日同比 {{ analysisData.visitData.dayForCompare }}
+                    {{` ${$t('Analysis.yearOnYear')} ${analysisData.visitData.dayForCompare} `}}
                     <q-icon size="xs" name="arrow_drop_up" color="red" />
                   </span>
                   <span
-                  >周同比 {{ analysisData.visitData.weekForCompare }}
+                  >{{`${$t('Analysis.weekday')} ${analysisData.visitData.weekForCompare} `}}
                     <q-icon size="xs" name="arrow_drop_down" color="info" />
                   </span>
                 </q-item-label>
               </div>
               <q-separator spaced="15px" />
               <q-item-label>
-                <span>总访问量</span>
+                <span>{{`${$t('Analysis.totalVisitor')}`}}</span>
                 <span class="float-right">{{
                     analysisData.visitData.visitTotal
                   }}</span>
@@ -67,7 +67,7 @@
                 class="q-mr-sm"
                 :icon="analysisData.saleData.icon"
               ></q-avatar>
-              <span> 销售额 </span>
+              <span>{{` ${$t('Analysis.sales')} `}}</span>
               <span>
                 <q-chip
                   size="sm"
@@ -75,7 +75,7 @@
                   outline
                   color="blue"
                   class="bg-blue-1 float-right"
-                  label="月"
+                  :label="$t('Analysis.month')"
                 ></q-chip>
               </span>
             </q-card-section>
@@ -94,7 +94,7 @@
               </div>
               <q-separator spaced="15px" />
               <q-item-label>
-                <span>总销售额</span>
+                {{`${$t('Analysis.totalSales')}`}}
                 <span class="float-right">{{
                     analysisData.saleData.saleTotal
                   }}</span>
@@ -114,7 +114,7 @@
                 class="q-mr-sm"
                 :icon="analysisData.orderData.icon"
               ></q-avatar>
-              <span> 订单量 </span>
+              <span>{{` ${$t('Analysis.orderQuantity')} `}}</span>
               <span>
                 <q-chip
                   size="sm"
@@ -122,7 +122,7 @@
                   outline
                   color="red"
                   class="bg-red-1 float-right"
-                  label="周"
+                  :label="$t('Analysis.week')"
                 ></q-chip>
               </span>
             </q-card-section>
@@ -141,7 +141,7 @@
               </div>
               <q-separator spaced="15px" />
               <q-item-label>
-                <span>转化率</span>
+                <span>{{`${$t('Analysis.conversionRate')}`}}</span>
                 <span class="float-right">{{
                     analysisData.orderData.conversionRate
                   }}</span>
@@ -161,7 +161,7 @@
                 class="q-mr-sm"
                 :icon="analysisData.userData.icon"
               ></q-avatar>
-              <span> 新增用户 </span>
+              <span>{{` ${$t('Analysis.newUsers')} `}}</span>
               <span>
                 <q-icon
                   name="help_outline"
@@ -177,7 +177,7 @@
                   class="text-grey-9 q-mb-md"
                   style="font-size: xx-large"
                 >
-                  {{ analysisData.userData.dayIncrease }} 位
+                    {{` ${analysisData.userData.dayIncrease} ${$t('Analysis.position')} `}}
                 </q-item-label>
                 <q-item-label class="q-mb-md">
                   <span
@@ -219,7 +219,7 @@
               </div>
               <q-separator spaced="15px" />
               <q-item-label>
-                <span>总用户</span>
+                <span>{{`${$t('Analysis.totalUser')}`}}</span>
                 <span class="float-right"
                 >{{ analysisData.userData.userTotal }} 人</span
                 >
@@ -259,7 +259,7 @@
                   class="q-mr-sm"
                   icon="leaderboard"
                 ></q-avatar>
-                <span> 访问量 </span>
+                <span>  {{` ${$t('Analysis.views')} `}}</span>
               </q-item-label>
               <q-item-label class="col q-gutter-sm text-right">
                 <q-btn-toggle
@@ -269,9 +269,9 @@
                   unelevated
                   toggle-color="primary"
                   :options="[
-                    { label: '当周', value: 'currentWeek' },
-                    { label: '当月', value: 'currentMonth' },
-                    { label: '当年', value: 'currentYear' }
+                    { label: $t('Analysis.currentWeek'), value: 'currentWeek' },
+                    { label: $t('Analysis.currentMonth'), value: 'currentMonth' },
+                    { label: $t('Analysis.currentYear'), value: 'currentYear' }
                   ]"
                 />
                 <sc-date-range
@@ -287,14 +287,15 @@
                 class="col-md-8 col-xs-12 q-mb-sm"
                 :class="{ 'q-pr-md': $q.screen.gt.sm }"
               >
-                <q-item-label class="text-weight-bold">访问量趋势</q-item-label>
+                <q-item-label class="text-weight-bold">{{`${$t('Analysis.访问量趋势')}`}}</q-item-label>
                 <div class="q-mt-sm">
                   <ebar :height="visitBarData.height" :option="visitBarData.option" ref="visitBar" />
                 </div>
               </q-item-label>
               <q-item-label class="col-md-4 col-xs-12">
                 <q-item-label class="text-weight-bold q-mb-sm"
-                >访问量排行
+                >
+                >{{`${$t('Analysis.visitRanking')}`}}
                 </q-item-label>
                 <q-list>
                   <q-item
@@ -348,7 +349,7 @@
                   class="q-mr-sm"
                   icon="search"
                 ></q-avatar>
-                <span> 热门搜索 </span>
+                <span>{{` ${$t('Analysis.popularSearches')} `}}</span>
                 <span>
                   <q-icon
                     name="more_vert"
@@ -361,14 +362,14 @@
               <q-item-label class="row">
                 <div class="col-xl-6 col-md-12 col-sm-6 col-xs-12 q-px-sm" style="height: 120px">
                   <div class="q-mt-md q-mb-sm q-pl-sm">
-                    <span class="block q-mb-sm">搜索用户数</span>
+                    <span class="block q-mb-sm">{{`${$t('Analysis.searchTheNumberOfUsers')}`}}</span>
                     <span class="block" style="font-size: x-large">23,378</span>
                   </div>
                   <eline ref="searchUserLine" :option="searchUserLineData.option" :height="searchUserLineData.height" />
                 </div>
                 <div class="col-xl-6 col-md-12 col-sm-6 col-xs-12 q-px-sm" style="height: 120px">
                   <div class="q-mt-md q-mb-sm ">
-                    <span class="block q-mb-sm">人均搜索次数</span>
+                    <span class="block q-mb-sm">{{`${$t('Analysis.perCapitaSearch')}`}}</span>
                     <span class="block" style="font-size: x-large">10</span>
                   </div>
                   <eline ref="perPersonSearchLine" :option="perPersonSearchLineData.option" :height="perPersonSearchLineData.height" />
@@ -391,7 +392,7 @@
                   class="q-mr-sm"
                   icon="point_of_sale"
                 ></q-avatar>
-                <span> 销售额 </span>
+                <span>{{` ${$t('Analysis.sales')} `}}</span>
                 <span>
                   <q-icon
                     name="more_vert"
@@ -414,7 +415,7 @@
                   class="q-mr-sm"
                   icon="groups"
                 ></q-avatar>
-                <span> 用户画像 </span>
+                <span>{{` ${$t('Analysis.userPortrait')} `}}</span>
                 <span>
                   <q-icon
                     name="more_vert"
@@ -427,15 +428,15 @@
               <q-item-label class="row text-center q-px-md q-pt-lg q-pb-sm">
                 <div class="col text-primary">
                   <q-avatar icon="accessibility" color="blue-1"></q-avatar>
-                  <q-item-label class="q-mt-sm">男性 65%</q-item-label>
+                  <q-item-label class="q-mt-sm">{{`${$t('Analysis.male')} 65%`}}</q-item-label>
                 </div>
                 <div class="col text-purple-4">
                   <q-avatar icon="accessibility" color="purple-1"></q-avatar>
-                  <q-item-label class="q-mt-sm">女性 25%</q-item-label>
+                  <q-item-label class="q-mt-sm">{{`${$t('Analysis.female')} 25%`}}</q-item-label>
                 </div>
                 <div class="col text-grey">
                   <q-avatar icon="accessibility" color="grey-2"></q-avatar>
-                  <q-item-label class="q-mt-sm">未知 10%</q-item-label>
+                  <q-item-label class="q-mt-sm">{{`${$t('Analysis.unknown')} 10%`}}</q-item-label>
                 </div>
               </q-item-label>
               <q-item-label class="row q-pl-sm q-gutter-sm">
