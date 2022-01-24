@@ -331,6 +331,39 @@ const routes = [
     ]
   },
   {
+    path: '/expend/ui-modeling',
+    name: '/expend/ui-modeling',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/expend/UiModeling')
+      }
+    ]
+  },
+  {
+    path: '/expend/icon-view',
+    name: '/expend/icon-view',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/expend/IconView')
+      }
+    ]
+  },
+  {
+    path: '/expend/file-view',
+    name: '/expend/file-view',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/expend/FileView')
+      }
+    ]
+  },
+  {
     path: '/',
     name: '/',
     component: () => import('layouts/MainLayout.vue'),
