@@ -1,3 +1,5 @@
+import { deepCopy } from 'components/dynamicform/utils/utils'
+
 const routeDatas = [
   {
     name: '仪表盘',
@@ -204,6 +206,21 @@ const routeDatas = [
         name: '流程图',
         group: '/expend',
         to: '/expend/flow-chart'
+      },
+      {
+        name: 'UI建模',
+        group: '/expend',
+        to: '/expend/ui-modeling'
+      },
+      {
+        name: '图标集合',
+        group: '/expend',
+        to: '/expend/icon-view'
+      },
+      {
+        name: '文件预览',
+        group: '/expend',
+        to: '/expend/file-view'
       }
     ]
   }
@@ -413,7 +430,8 @@ const styleSettingsData = {
     {
       style: 'background-color: rgb(24, 144, 255)',
       color: 'rgb(24, 144, 255)',
-      checked: true
+      checked: true,
+      attribute: 'var(--q-color-primary)'
     },
     {
       style: 'background-color: rgb(245, 34, 45)',
@@ -465,6 +483,10 @@ const styleSettingsData = {
     footer: true,
     leftMenuHeader: true
   }
+}
+
+function getStyleSettingsData() {
+  return deepCopy(styleSettingsData)
 }
 
 // 获取可用的数量
@@ -525,5 +547,6 @@ export default {
   accessTabs,
   addTab,
   getAvailableCount,
+  getStyleSettingsData,
   selectTabByTo
 }

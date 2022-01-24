@@ -8,7 +8,7 @@
 /* eslint-env node */
 const path = require('path')
 
-module.exports = function (ctx) {
+module.exports = function(ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -26,16 +26,20 @@ module.exports = function (ctx) {
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      // 'ionicons-v4',
       // 'mdi-v5',
       // 'fontawesome-v5',
-      // 'eva-icons',
-      'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
-      'roboto-font', // optional, you are not bound to it
-      'material-icons' // optional, you are not bound to it
+      'ionicons-v4',
+      'mdi-v6',
+      'eva-icons',
+      'themify',
+      'line-awesome',
+      'bootstrap-icons',
+      'material-icons', // optional, you are not bound to it
+      'material-icons-outlined',
+      'material-icons-round',
+      'material-icons-sharp'
     ],
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
@@ -58,11 +62,11 @@ module.exports = function (ctx) {
       // extractCSS: false,
       env: ctx.dev
         ? {
-            VUE_APP_BASE_API: 'http://dev.api.com/api'
-          }
+          VUE_APP_BASE_API: 'http://dev.api.com/api'
+        }
         : {
-            VUE_APP_BASE_API: 'http://prod.api.com'
-          },
+          VUE_APP_BASE_API: 'http://prod.api.com'
+        },
       // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack(cfg, { isServer, isClient }) {
         cfg.resolve.alias = {
@@ -105,6 +109,7 @@ module.exports = function (ctx) {
       iconSet: 'material-icons', // Quasar icons set
       lang: 'en-us', // Quasar language pack
       config: {
+        loading: { /* look at QUASARCONFOPTIONS from the API card (bottom of page) */ },
         brand: {
           // src/sass/quasar.variables.sass
           primary: '#1890ff',
@@ -226,7 +231,8 @@ module.exports = function (ctx) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack(cfg) {}
+      extendWebpack(cfg) {
+      }
     }
   }
 }

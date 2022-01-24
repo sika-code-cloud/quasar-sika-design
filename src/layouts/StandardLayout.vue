@@ -18,7 +18,7 @@
         />
         <q-btn dense flat size="sm" class="q-mr-xs" v-show="$q.screen.gt.xs">
           <q-avatar size="sm">
-            <q-img src="imgs/logo/sika-logo.png"/>
+            <q-img src="imgs/logo/sika-logo.png" />
           </q-avatar>
         </q-btn>
         <q-space />
@@ -28,7 +28,7 @@
             <q-avatar size="sm">
               <q-img alt="GreaterWMS" src="imgs/logo/cc-admin-logo.png" style="width: 32px" />
               <q-tooltip>
-                {{$t('StandardLayout.enterpriseRapidDevelopmentPlatform')}}
+                {{ $t('StandardLayout.enterpriseRapidDevelopmentPlatform') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -37,7 +37,7 @@
             <q-avatar size="sm">
               <q-img alt="GreaterWMS" src="imgs/logo/greater-wms-logo.png" />
               <q-tooltip>
-                {{$t('StandardLayout.greaterWmsSupplyChainManagementSystem')}}
+                {{ $t('StandardLayout.greaterWmsSupplyChainManagementSystem') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -46,7 +46,7 @@
             <q-avatar size="sm">
               <img alt="quasar" src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
               <q-tooltip>
-                {{$t('StandardLayout.quasarChineseOfficialDocumentation')}}
+                {{ $t('StandardLayout.quasarChineseOfficialDocumentation') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -57,7 +57,7 @@
             <q-avatar size="sm" text-color="primary">
               <q-icon class="iconhuaban88 iconfont text-primary" />
               <q-tooltip v-if="$q.screen.gt.sm">
-                {{$t('StandardLayout.githubAddress')}}
+                {{ $t('StandardLayout.githubAddress') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -65,12 +65,12 @@
             <q-avatar size="sm">
               <q-icon class="iconfont iconqq text-primary" />
               <q-tooltip v-if="$q.screen.gt.sm">
-                {{$t('StandardLayout.clickToCopyQqGroup_327424532AcFeedback')}}
+                {{ $t('StandardLayout.clickToCopyQqGroup_327424532AcFeedback') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
           <q-btn round dense flat size="sm" color="grey-7" icon="help_outline">
-            <q-tooltip>{{$t('StandardLayout.helpDocumentation')}}</q-tooltip>
+            <q-tooltip>{{ $t('StandardLayout.helpDocumentation') }}</q-tooltip>
           </q-btn>
           <q-btn
             round
@@ -102,7 +102,7 @@
                   text-overflow: ellipsis;
                   overflow: hidden;
                 "
-              >{{$t('StandardLayout.Emailseeeeee')}}</span
+              >{{ $t('StandardLayout.Emailseeeeee') }}</span
               >
               <q-menu
                 :offset="[0, 26]"
@@ -119,7 +119,7 @@
                     >
                       <q-icon name="person" size="xs" />
                     </q-item-section>
-                    <q-item-section>{{$t('StandardLayout.Emailseeeeee')}}</q-item-section>
+                    <q-item-section>{{ $t('StandardLayout.Emailseeeeee') }}</q-item-section>
                   </q-item>
                   <q-item clickable v-close-popup to="/account/settings">
                     <q-item-section
@@ -129,7 +129,7 @@
                     >
                       <q-icon name="settings" size="xs" />
                     </q-item-section>
-                    <q-item-section>{{$t('StandardLayout.personalCenter')}}</q-item-section>
+                    <q-item-section>{{ $t('StandardLayout.personalCenter') }}</q-item-section>
                   </q-item>
                   <q-separator color="grey-4" />
                   <q-item clickable v-close-popup to="/user/login">
@@ -140,7 +140,7 @@
                     >
                       <q-icon name="logout" size="xs" />
                     </q-item-section>
-                    <q-item-section>{{$t('StandardLayout.signOut')}}</q-item-section>
+                    <q-item-section>{{ $t('StandardLayout.signOut') }}</q-item-section>
                   </q-item>
                 </q-list>
               </q-menu>
@@ -193,21 +193,21 @@
                 >
                   <q-tab name="informs">
                     <span v-if="informCount > 0">
-                      {{$t('StandardLayout.notice')}}({{ informCount }})
+                      {{ $t('StandardLayout.notice') }}({{ informCount }})
                     </span>
-                    <span v-else>{{$t('StandardLayout.notice')}}</span>
+                    <span v-else>{{ $t('StandardLayout.notice') }}</span>
                   </q-tab>
                   <q-tab name="notifies">
                     <span v-if="notifiesCount > 0">
-                      {{$t('StandardLayout.news')}}({{ notifiesCount }})
+                      {{ $t('StandardLayout.news') }}({{ notifiesCount }})
                     </span>
-                    <span v-else>{{$t('StandardLayout.news')}}</span>
+                    <span v-else>{{ $t('StandardLayout.news') }}</span>
                   </q-tab>
                   <q-tab name="waitDeals">
                     <span v-if="waitDealCount > 0">
-                      {{$t('StandardLayout.upcoming')}}({{ waitDealCount }})
+                      {{ $t('StandardLayout.upcoming') }}({{ waitDealCount }})
                     </span>
-                    <span v-else>{{$t('StandardLayout.upcoming')}}</span>
+                    <span v-else>{{ $t('StandardLayout.upcoming') }}</span>
                   </q-tab>
                 </q-tabs>
                 <q-separator />
@@ -318,7 +318,7 @@
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
-                             @click="lookMore($t('StandardLayout.viewNotice'))"
+                            @click="lookMore($t('StandardLayout.viewNotice'))"
                           ></q-btn>
                         </q-item-section>
                       </q-item>
@@ -374,7 +374,7 @@
                             flat
                             :ripple="{ color: 'info' }"
                             class="q-ma-none full-width full-height no-border-radius"
-                             @click="lookMore($t('StandardLayout.viewNotice'))"
+                            @click="lookMore($t('StandardLayout.viewNotice'))"
                           ></q-btn>
                         </q-item-section>
                       </q-item>
@@ -408,7 +408,8 @@
           </q-btn>
           <span class="inline-block q-ml-sm">Sika Design</span>
         </div>
-        <div class="text-center">{{`Copyright@2020 Sika ${$t('StandardLayout.experienceTheTechnicalDepartment')}`}}</div>
+        <div class="text-center">{{ `Copyright@2020 Sika ${$t('StandardLayout.experienceTheTechnicalDepartment')}` }}
+        </div>
       </div>
     </q-footer>
     <q-drawer
@@ -467,7 +468,7 @@
           <q-list padding>
             <q-item v-if="false">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.overallStyleSetting')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.overallStyleSetting') }}</q-item-label>
                 <q-item-label>
                   <div class="q-mt-sm q-gutter-x-md row" style="height: 50px">
                     <div
@@ -521,35 +522,8 @@
             </q-item>
             <q-item>
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.themeColor')}}</q-item-label>
-                <q-item-label class="q-gutter-sm">
-                  <span
-                    style="width: 20px; height: 20px"
-                    :key="index"
-                    v-for="(item, index) in styleSettingsData.themeColorSetting"
-                    @click="changeThemeColor(index)"
-                  >
-                    <q-btn
-                      :style="item.style"
-                      text-color="white"
-                      flat
-                      icon="done"
-                      dense
-                      v-if="item.checked"
-                      style="width: 18px; height: 18px"
-                      size="xs"
-                    />
-                    <q-btn
-                      :style="item.style"
-                      text-color="white"
-                      flat
-                      dense
-                      v-else
-                      style="width: 18px; height: 18px"
-                      size="xs"
-                    />
-                  </span>
-                </q-item-label>
+                <q-item-label>{{ $t('StandardLayout.themeColor') }}</q-item-label>
+                <ColorChecked @change="changeColor($event)" />
               </q-item-section>
             </q-item>
 
@@ -557,7 +531,7 @@
 
             <q-item v-if="false">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.navigationMode')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.navigationMode') }}</q-item-label>
                 <q-item-label caption>
                   <div class="q-mt-sm q-gutter-x-md" style="height: 50px">
                     <div
@@ -604,7 +578,7 @@
             </q-item>
             <q-item tag="div" class="q-mt-md">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.contentAreaWidth')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.contentAreaWidth') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-select
@@ -621,7 +595,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.fixedHeader')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.fixedHeader') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -635,7 +609,7 @@
 
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.fixedFooter')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.fixedFooter') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -650,12 +624,12 @@
             <q-separator spaced="12px" />
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.contentArea')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.contentArea') }}</q-item-label>
               </q-item-section>
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.header')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.header') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -666,7 +640,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.topRapeMenu')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.topRapeMenu') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -677,7 +651,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.glossy')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.glossy') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -688,7 +662,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.footage')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.footage') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -699,7 +673,7 @@
             </q-item>
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.menuHead')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.menuHead') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle
@@ -709,11 +683,11 @@
               </q-item-section>
             </q-item>
             <q-separator spaced="“12px" />
-            <q-item-label header>{{$t('StandardLayout.otherSettings')}}</q-item-label>
+            <q-item-label header>{{ $t('StandardLayout.otherSettings') }}</q-item-label>
 
             <q-item tag="label">
               <q-item-section>
-                <q-item-label>{{$t('StandardLayout.viwindMode')}}</q-item-label>
+                <q-item-label>{{ $t('StandardLayout.viwindMode') }}</q-item-label>
               </q-item-section>
               <q-item-section side top>
                 <q-toggle color="primary" v-model="notif2" val="friend" />
@@ -733,7 +707,7 @@
                   <q-icon name="alarm" />
                 </div>
                 <div class="col-11">
-                  {{$t('StandardLayout.onlyUsedForPreview')}}
+                  {{ $t('StandardLayout.onlyUsedForPreview') }}
                 </div>
               </div>
             </q-item>
@@ -818,12 +792,13 @@
           style="z-index: 3000"
           :offset="rightOffsetGithub"
         >
-          <q-btn type="a" target="_blank" unelevated dense round
-                 href="https://github.com/dq-open-cloud/quasar-sika-design">
+          <q-btn
+            v-touch-pan.prevent.mouse="moveLink" :disable="draggingLink" type="a" target="_blank" unelevated dense round
+            href="https://github.com/dq-open-cloud/quasar-sika-design">
             <q-avatar style="width: 40px; height: 40px">
-              <q-icon class="iconfont iconhuaban88 text-primary"/>
+              <q-icon class="iconfont iconhuaban88 text-primary" />
               <q-tooltip v-if="$q.screen.gt.sm">
-                {{$t('StandardLayout.githubAddress')}}
+                {{ $t('StandardLayout.githubAddress') }}
               </q-tooltip>
             </q-avatar>
           </q-btn>
@@ -843,6 +818,8 @@
             color="primary"
             square
             @click="triggerRightDrawer"
+            :disable="draggingSetting"
+            v-touch-pan.vertical.prevent.mouse="moveSetting"
           />
         </q-page-sticky>
         <q-page-scroller
@@ -861,6 +838,7 @@
 import MenuTree from 'components/tree/MenuTree'
 import LAYOUT_DATA from '@/mock/data/layout/layoutData'
 import { morph, colors, copyToClipboard } from 'quasar'
+import ColorChecked from 'components/dynamicform/common-component/ColorChecked'
 
 export default {
   name: 'StandardLayout',
@@ -873,7 +851,7 @@ export default {
       waitDeals: LAYOUT_DATA.waitDealDatas,
       languageDatas: LAYOUT_DATA.languageDatas,
       scrollStyleData: LAYOUT_DATA.scrollStyleData,
-      styleSettingsData: LAYOUT_DATA.styleSettingsData,
+      styleSettingsData: LAYOUT_DATA.getStyleSettingsData(),
       showMessage: false,
       messageTab: 'informs',
       leftDrawerOpen: false,
@@ -887,11 +865,14 @@ export default {
       tabs: LAYOUT_DATA.accessTabs,
       currentPath: null,
       notif2: true,
-      activeDate: 1
+      activeDate: 1,
+      draggingLink: false,
+      draggingSetting: false
     }
   },
   components: {
-    MenuTree
+    MenuTree,
+    ColorChecked
   },
   methods: {
     buildTabRoute() {
@@ -928,19 +909,10 @@ export default {
     replaceView(sourceStr, str) {
       return sourceStr.substr(0, 1) + str + sourceStr.substr(2)
     },
-    changeThemeColor(index) {
-      for (
-        let i = 0;
-        i < this.styleSettingsData.themeColorSetting.length;
-        ++i
-      ) {
-        this.styleSettingsData.themeColorSetting[i].checked = false
-      }
+    changeColor(val) {
       colors.setBrand(
-        'primary',
-        this.styleSettingsData.themeColorSetting[index].color
+        'primary', val.color
       )
-      this.styleSettingsData.themeColorSetting[index].checked = true
     },
     look(type, index) {
       if (type === 'inform') {
@@ -983,11 +955,19 @@ export default {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
     rightHide() {
-      this.rightOffset = LAYOUT_DATA.rightOffset.rightOffsetInit
+      const tempY = this.rightOffset[1]
+      this.rightOffset = [
+        LAYOUT_DATA.rightOffset.rightOffsetInit[0],
+        tempY
+      ]
       this.rightDrawerSetting = false
     },
     rightShow() {
-      this.rightOffset = LAYOUT_DATA.rightOffset.rightOffsetShow
+      const tempY = this.rightOffset[1]
+      this.rightOffset = [
+        LAYOUT_DATA.rightOffset.rightOffsetShow[0],
+        tempY
+      ]
     },
     onResize(size) {
       // 监听容器大小变化
@@ -1035,6 +1015,20 @@ export default {
     },
     refresh() {
       this.activeDate = new Date().getTime()
+    },
+    moveLink(ev) {
+      this.draggingLink = ev.isFirst !== true && ev.isFinal !== true
+      this.rightOffsetGithub = [
+        this.rightOffsetGithub[0] - ev.delta.x,
+        this.rightOffsetGithub[1] + ev.delta.y
+      ]
+    },
+    moveSetting(ev) {
+      this.draggingSetting = ev.isFirst !== true && ev.isFinal !== true
+      this.rightOffset = [
+        this.rightOffset[0],
+        this.rightOffset[1] + ev.delta.y
+      ]
     }
   },
   watch: {
