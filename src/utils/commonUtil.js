@@ -19,3 +19,5 @@ export default {
   getRandomCeilInt,
   getRandomFloorInt
 }
+
+
